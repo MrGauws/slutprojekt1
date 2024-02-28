@@ -1,0 +1,83 @@
+.site-main {
+    width: 100%;
+    margin-top: 2%;
+
+    .woocommerce-breadcrumb {
+        padding-left: 10%;
+        a {
+            text-decoration: none;
+            color: #9f9f9f;
+            font-weight: $font-weight-normal;
+        }
+        .breadcrumb-icon {
+            position: relative;
+            font-weight: $font-weight-normal;
+            font-size: 20px;
+            vertical-align: middle;
+            margin-left: 5px;
+            margin-right: 5px;
+            color: #A4A4A4;
+        }
+    }
+
+    .products {
+        &.columns-3 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+
+            li.product {
+                width: 266.67px;
+                max-width: calc(33.333% - 16px);
+                padding: 82px 6px 34px;
+                border-radius: 9px;
+                background-color: #F6F6F6;
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+
+                .woocommerce-loop-product__title {
+                    font-family: $sf-font;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 24px;
+                    text-align: center;
+                    color: $primary-text-color;
+                    margin-bottom: 10px;
+                    list-style-type: none;
+                    border-bottom: none; /* Ta bort gränsen */
+                }
+
+                .price {
+                    font-family: $sf-font;
+                    font-size: 1.2em;
+                    font-weight: 600;
+                    line-height: 1;
+                    text-align: center;
+                    color: $primary-text-color;
+                    margin-top: auto;
+                    list-style-type: none;
+                    border-bottom: none; /* Ta bort gränsen */
+                }
+
+                .ajax_add_to_cart {
+                    text-align: center;
+                    margin-top: 10px;
+                    list-style-type: none;
+                }
+            }
+        }
+    }
+}
+
+/* Ändra färg och ta bort hyperlänkstil för produktlänkar */
+.woocommerce-loop-product__link,
+.woocommerce-loop-product__link:hover,
+.woocommerce-loop-product__link:focus {
+    color: inherit;
+    text-decoration: none;
+}
+.woocommerce-loop-product__link {
+    text-align: center;
+}

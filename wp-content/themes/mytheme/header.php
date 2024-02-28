@@ -27,17 +27,5 @@
             wp_nav_menu($menu); ?>    
           <!--   <button class="hamburger">&#9776;</button>      -->
         </div>
-        <div class="column-51">
-            <!-- SHOWS THE FOOTER MENU -->
-            <?php 
-            $menu = array(
-                'theme_location' => 'cart-meny',
-                'menu_id' => 'loginmenu',
-                'container' => 'nav',
-                'container_class' => 'menu'
-            );
-            
-            wp_nav_menu($menu); ?>    
-          <!--   <button class="hamburger">&#9776;</button>      -->
-        </div>
+
     </header>

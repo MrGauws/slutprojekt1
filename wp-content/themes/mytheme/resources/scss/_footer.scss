@@ -1,0 +1,77 @@
+footer {
+    position: relative; /* Relativ positionering för att footern ska vara relaterad till förälderelementet */
+    bottom: 0; /* Placera footern längst ned */
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+
+        .footercolumn {
+            flex: 1;
+            padding: 0 20px;
+            transform: translate(50px, 50px); /* Flytta kolumnerna 50px till höger och 50px ner */
+
+            &:first-child {
+                p {
+                    font-family: 'SF Pro Display';
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 24px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    margin-bottom: 20px;
+                }
+
+                .social-icons {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 10px;
+
+                    a {
+                        color: white;
+                        margin-right: 10px;
+
+                        i {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+
+            .category {
+                font-family: 'SF Pro Display';
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 16px;
+                letter-spacing: 0em;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    font-family: 'SF Pro Display';
+                    font-size: 14px;
+                    font-weight: 300;
+                    line-height: 32px;
+                    letter-spacing: 0em;
+                    text-align: left;
+
+                    a {
+                        color: white;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

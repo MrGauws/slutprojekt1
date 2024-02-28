@@ -1,21 +1,12 @@
 body {
     width: auto;
     margin:0;
-    font-family: $poppins-font;
-    background-color: $background_color;
     overflow-x: hidden;
-    
   
     .content {
-      margin: $general-margin;
+
      
     }
   }
   
-  button {
-    &:hover {
-      color: $primary_text_color;
-      transform: scale(1.05s);
-    }
-  }
   
