@@ -1,0 +1,130 @@
+// Base styling för formuläret
+form.checkout {
+    // Din styling här
+}
+
+// KCO-wrapper
+#kco-wrapper {
+    // Din styling här
+}
+
+// KCO-order-review
+#kco-order-review {
+    width: 512px;
+    height: 704px;
+    padding: 32px 24px;
+    border-radius: 10px;
+    border: 1px solid;
+    gap: 24px;
+}
+
+// Selector för varje produkt i tabellen
+.shop_table.woocommerce-checkout-review-order-table tbody tr.cart_item {
+    // Produktattribut
+    width: 464px;
+    height: 72px;
+    padding: 16px 0 16px 16px;
+    border-radius: 13px;
+    gap: 16px;
+    color: #F6F6F6;
+
+    // Om du behöver ytterligare anpassning för varje cell, kan du använda följande selektorer:
+
+    // Produktens namn
+    .product-name {
+        // Textattribut för produktnamn
+        font-family: "SF Pro Display";
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #000000;
+    }
+
+    // Produktens subtotal
+    .product-total {
+        // Textattribut för pris
+        font-family: $sf-font;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: right;
+        color: #000000;
+    }
+}
+
+// Tabell i orderöversikt
+.shop_table.woocommerce-checkout-review-order-table {
+    // Din styling här
+
+    thead {
+        // Din styling här
+    }
+
+    tbody {
+        // Din styling här
+    }
+
+    tfoot {
+        // Din styling här
+    }
+}
+
+// KCO-iframe
+#kco-iframe {
+    // Din styling här
+}
+
+// KCO-extra-checkout-fields
+#kco-extra-checkout-fields {
+    // Din styling här
+}
+
+// WooCommerce-billing-fields
+.woocommerce-billing-fields {
+    // Din styling här
+}
+
+// WooCommerce-shipping-fields
+.woocommerce-shipping-fields {
+    // Din styling här
+}
+
+// WooCommerce-additional-fields
+.woocommerce-additional-fields {
+    // Din styling här
+}
+
+// WooCommerce-privacy-policy-text
+.woocommerce-privacy-policy-text {
+    // Din styling här
+}
+
+// WooCommerce-terms-and-conditions-wrapper
+.woocommerce-terms-and-conditions-wrapper {
+    // Din styling här
+}
+
+// Klarna-checkout-container
+#klarna-checkout-container {
+    // Din styling här
+
+    // Klarna-unsupported-page
+    #klarna-unsupported-page {
+        // Din styling här
+
+        .heading {
+            // Din styling här
+        }
+
+        .subheading {
+            // Din styling här
+        }
+
+        .reload {
+            // Din styling här
+        }
+    }
+}

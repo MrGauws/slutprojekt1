@@ -2,6 +2,7 @@ footer {
     position: relative; /* Relativ positionering för att footern ska vara relaterad till förälderelementet */
     bottom: 0; /* Placera footern längst ned */
     width: 100%;
+
     background-color: black;
     color: white;
     padding: 20px 0;
@@ -9,6 +10,7 @@ footer {
     .container {
         display: flex;
         justify-content: space-between;
+        margin: $general-margin;
 
         .footercolumn {
             flex: 1;
@@ -23,17 +25,16 @@ footer {
                     line-height: 24px;
                     letter-spacing: 0em;
                     text-align: left;
+                    color: #CFCFCF; /* Lägg till färg */
                     margin-bottom: 20px;
                 }
 
-                .social-icons {
-                    display: flex;
-                    align-items: center;
-                    margin-top: 10px;
+                .social-icons {     
+
 
                     a {
                         color: white;
-                        margin-right: 10px;
+                        margin-right: 70px;
 
                         i {
                             font-size: 24px;
@@ -49,6 +50,7 @@ footer {
                 line-height: 16px;
                 letter-spacing: 0em;
                 text-align: left;
+                color: #FFFFFF; /* Lägg till färg */
                 margin-bottom: 10px;
             }
 
@@ -64,9 +66,10 @@ footer {
                     line-height: 32px;
                     letter-spacing: 0em;
                     text-align: left;
+                    color: #CFCFCF; /* Lägg till färg */
 
                     a {
-                        color: white;
+                        color: #CFCFCF;
                         text-decoration: none;
                         cursor: pointer;
                     }

@@ -39,6 +39,8 @@ function mytheme_init(){
         'huvudmeny' => 'huvudmeny' ,
         'cart-meny' => 'cart-meny' ,
         'footer_menu_1' => 'Footer Menu 1',
+        'services' => 'services',
+        'assistance' => 'assistance',
         
     );
 register_nav_menus($menus);

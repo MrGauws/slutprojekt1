@@ -4,10 +4,10 @@
             <img src="http://slutprojekt1.test/wp-content/uploads/2024/02/Logo-1.png" alt="Logo">
             <p>We are a residential interior design firm located in Portland. Our <br> boutique-studio offers more than</p>
             <div class="social-icons">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="www.twitter.com" target="_blank"><img src="<?=get_template_directory_uri() . '/assets/images/twitter.png';?>" alt="twitter"></a>
+                <a href="www.facebook.com" target="_blank"><img src="<?=get_template_directory_uri() . '/assets/images/facebook.png';?>" alt="facebook"></a>
+                <a href="www.tiktok.com" target="_blank"><img src="<?=get_template_directory_uri() . '/assets/images/tiktok.png';?>" alt="tik tok"></a>
+                <a href="www.instagram.com" target="_blank"><img src="<?=get_template_directory_uri() . '/assets/images/instagram.png';?>" alt="instagram"></a>
             </div>
         </div>
         <div class="footercolumn footercolumn2">
@@ -20,3 +20,8 @@
         </div>
     </div>
 </footer>
+<?php 
+wp_footer();
+?>
+                </body>
+                </html>
