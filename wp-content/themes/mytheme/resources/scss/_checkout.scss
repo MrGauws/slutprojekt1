@@ -5,7 +5,7 @@ form.checkout {
 
 // KCO-wrapper
 #kco-wrapper {
-    // Din styling här
+
 }
 
 // KCO-order-review
@@ -14,7 +14,6 @@ form.checkout {
     height: 704px;
     padding: 32px 24px;
     border-radius: 10px;
-    border: 1px solid;
     gap: 24px;
 }
 
@@ -55,76 +54,7 @@ form.checkout {
     }
 }
 
-// Tabell i orderöversikt
-.shop_table.woocommerce-checkout-review-order-table {
-    // Din styling här
-
-    thead {
-        // Din styling här
-    }
-
-    tbody {
-        // Din styling här
-    }
-
-    tfoot {
-        // Din styling här
-    }
+.shop_table.woocommerce-checkout-review-order-table tbody tr.cart_item {
+    background-color: #F6F6F6;
 }
 
-// KCO-iframe
-#kco-iframe {
-    // Din styling här
-}
-
-// KCO-extra-checkout-fields
-#kco-extra-checkout-fields {
-    // Din styling här
-}
-
-// WooCommerce-billing-fields
-.woocommerce-billing-fields {
-    // Din styling här
-}
-
-// WooCommerce-shipping-fields
-.woocommerce-shipping-fields {
-    // Din styling här
-}
-
-// WooCommerce-additional-fields
-.woocommerce-additional-fields {
-    // Din styling här
-}
-
-// WooCommerce-privacy-policy-text
-.woocommerce-privacy-policy-text {
-    // Din styling här
-}
-
-// WooCommerce-terms-and-conditions-wrapper
-.woocommerce-terms-and-conditions-wrapper {
-    // Din styling här
-}
-
-// Klarna-checkout-container
-#klarna-checkout-container {
-    // Din styling här
-
-    // Klarna-unsupported-page
-    #klarna-unsupported-page {
-        // Din styling här
-
-        .heading {
-            // Din styling här
-        }
-
-        .subheading {
-            // Din styling här
-        }
-
-        .reload {
-            // Din styling här
-        }
-    }
-}

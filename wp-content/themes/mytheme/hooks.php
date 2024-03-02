@@ -16,15 +16,15 @@ add_filter( 'woocommerce_breadcrumb_defaults', 'change_breadcrumb_delimiter' );
 
 
 
-function custom_modify_shipping_heading( $translated_text, $text, $domain ) {
+function change_shipping_text($translated_text, $text, $domain) {
     // Kolla om texten matchar "Shipping" och är i rätt domän
-    if ( $text === 'Shipping' && $domain === 'woocommerce' ) {
-        // Ändra texten till "Estimated shipping and Handling"
-        $translated_text = __( 'Estimated shipping and Handling', 'woocommerce' );
+    if ($text === 'Shipping' && $domain === 'woocommerce') {
+        // Ändra texten till "Estimated shipping & Handling"
+        $translated_text = __('Estimated shipping & Handling', 'woocommerce');
     }
     return $translated_text;
 }
-add_filter( 'gettext', 'custom_modify_shipping_heading', 20, 3 );
+add_filter('gettext', 'change_shipping_text', 20, 3);
 
 
 function add_menu_icons($items, $args) {
@@ -70,4 +70,17 @@ function get_menu_image_url($title) {
 
     return '';
 }
+
+
+// Change "Product" label to "Summary" in the checkout review order table
+add_filter('woocommerce_checkout_order_review', 'change_product_label_to_summary');
+function change_product_label_to_summary($html) {
+    // Replace "Product" with "Summary" in the table header
+    $html = str_replace('<th class="product-name">Product</th>', '<th class="product-name">Summary</th>', $html);
+    return $html;
+}
+
+
+
+
 ?>

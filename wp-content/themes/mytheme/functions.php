@@ -57,3 +57,8 @@ add_action('wp_ajax_save_product_like_status', 'save_product_like_status');
 add_action('wp_ajax_nopriv_save_product_like_status', 'save_product_like_status');
 
 
+function enqueue_custom_scripts() {
+    // Enqueue the custom JavaScript file
+    wp_enqueue_script('custom-checkout-scripts', get_template_directory_uri() . '/resources/js/checkout.js', array('jquery'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
