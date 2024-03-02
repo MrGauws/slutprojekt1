@@ -37,3 +37,23 @@ function custom_theme_widgets_init() {
     ) );
 }
 add_action( 'widgets_init', 'custom_theme_widgets_init' );
+
+
+// Funktion för att hantera AJAX-begäran för att spara liked-statusen
+function save_product_like_status() {
+    // Hämta produkt-ID från AJAX-begäran
+    $product_id = isset($_POST['product_id']) ? intval($_POST['product_id']) : 0;
+    
+    // Spara liked-statusen i sessionen eller någon annanstans om användaren inte är inloggad
+    // Här kan du använda din egen logik för att spara statusen, till exempel i sessionen eller genom en cookie
+
+    // Skicka ett svar tillbaka till JavaScript
+    echo json_encode(array('success' => true));
+    
+    // Viktigt att avsluta scriptet efter AJAX-hanteringen
+    wp_die();
+}
+add_action('wp_ajax_save_product_like_status', 'save_product_like_status');
+add_action('wp_ajax_nopriv_save_product_like_status', 'save_product_like_status');
+
+

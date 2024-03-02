@@ -21,12 +21,16 @@
     }
 
     .products {
+        
         &.columns-3 {
+            
             display: flex;
             flex-wrap: wrap;
             gap: 16px;
+            justify-content: center;
 
             li.product {
+                
                 width: 266.67px;
                 max-width: calc(33.333% - 16px);
                 padding: 82px 6px 34px;
@@ -81,4 +85,20 @@
 .woocommerce-loop-product__link {
     text-align: center;
 }
+
+
+.like-button.liked img {
+    filter: brightness(0) saturate(100%) invert(83%) sepia(6%) saturate(2083%) hue-rotate(358deg) brightness(104%) contrast(93%);
+    border: none;
+}
+
+
+
+.like-button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0px 0 10px 200px;
+
+  }
+
 
