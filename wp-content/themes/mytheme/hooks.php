@@ -137,3 +137,12 @@ function custom_checkout_ajax_handling() {
     // Ditt AJAX-hanteringskod här
 }
 add_action( 'woocommerce_before_checkout_form', 'custom_checkout_ajax_handling' );
+
+
+function replace_add_to_cart_text( $translated_text, $text, $domain ) {
+    if ( 'woocommerce' === $domain && 'Add to cart' === $text ) {
+        $translated_text = 'Buy Now';
+    }
+    return $translated_text;
+}
+add_filter( 'gettext', 'replace_add_to_cart_text', 20, 3 );

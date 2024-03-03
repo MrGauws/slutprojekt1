@@ -21,66 +21,58 @@
     }
 
     .products {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 10%;
         
-        &.columns-3 {
-            
+        li.product {
+            margin-bottom: 10%; /* Lägg till margin-bottom istället för margin-right */
+            margin-right: 0; /* Ta bort margin-right */
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #F6F6F6;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            list-style-type: none;
             display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            justify-content: center;
+            flex-direction: column;
+            position: relative;
 
-            li.product {
-                
-                width: 266.67px;
-                max-width: calc(33.333% - 16px);
-                padding: 82px 6px 34px;
-                border-radius: 9px;
-                background-color: #F6F6F6;
+            .woocommerce-loop-product__title {
+                font-family: $sf-font;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+                text-align: center;
+                color: $primary-text-color;
+                margin-bottom: 10px;
                 list-style-type: none;
-                display: flex;
-                flex-direction: column;
-                position: relative;
+                border-bottom: none;
+            }
 
-                .woocommerce-loop-product__title {
-                    font-family: $sf-font;
-                    font-size: 16px;
-                    font-weight: 500;
-                    line-height: 24px;
-                    text-align: center;
-                    color: $primary-text-color;
-                    margin-bottom: 10px;
-                    list-style-type: none;
-                    border-bottom: none; /* Ta bort gränsen */
-                }
+            .price {
+                font-family: $sf-font;
+                font-size: 1.2em;
+                font-weight: 600;
+                line-height: 1;
+                text-align: center;
+                color: $primary-text-color;
+                margin-top: auto;
+                list-style-type: none;
+                border-bottom: none;
+            }
 
-                .price {
-                    font-family: $sf-font;
-                    font-size: 1.2em;
-                    font-weight: 600;
-                    line-height: 1;
-                    text-align: center;
-                    color: $primary-text-color;
-                    margin-top: auto;
-                    list-style-type: none;
-                    border-bottom: none; /* Ta bort gränsen */
-                }
-
-                .ajax_add_to_cart {
-                    text-align: center;
-                    margin-top: 10px;
-                    list-style-type: none;
-                }
+            .ajax_add_to_cart {
+                text-align: center;
+                margin-top: 10px;
+                list-style-type: none;
             }
         }
     }
 }
 
 .product {
-    width: calc(33.333% - 20px); /* Räknar ut bredden för att visa 3 produkter per rad med marginal */
-    margin-bottom: 20px; /* Lägg till lite mellanrum mellan produkterna */
+    width: 100%; /* Full bredd för produkter */
+    margin-bottom: 20px;
 }
 
 /* Ändra färg och ta bort hyperlänkstil för produktlänkar */
@@ -94,21 +86,16 @@
     text-align: center;
 }
 
-
 .like-button.liked img {
     filter: brightness(0) saturate(100%) invert(83%) sepia(6%) saturate(2083%) hue-rotate(358deg) brightness(104%) contrast(93%);
     border: none;
 }
 
-
-
 .like-button {
     border: none;
     background-color: rgba(0, 0, 0, 0);
-    margin: 0px 0 10px 200px;
-
-  }
-
+    margin-right: 20px; /* Margin to the right */
+}
 
 // Overlay-effekt för produktkort
 .product-overlay {
@@ -130,4 +117,21 @@
 
 .star-rating-overlay .fa-star {
     margin: 0 2px; // Avstånd mellan stjärnorna
+}
+/* Styla länken som en knapp */
+a.button.add_to_cart_button {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 12px 64px;
+    border-radius: 8px;
+    background-color: #000000; /* Byt ut med önskad färg */
+    color: #ffffff; /* Byt ut med önskad färg */
+    text-decoration: none;
+    text-align: center;
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
 }
