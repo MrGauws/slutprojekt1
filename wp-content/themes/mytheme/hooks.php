@@ -146,3 +146,10 @@ function replace_add_to_cart_text( $translated_text, $text, $domain ) {
     return $translated_text;
 }
 add_filter( 'gettext', 'replace_add_to_cart_text', 20, 3 );
+
+
+function enqueue_custom_email_styles() {
+    // Ladda CSS-filen för e-postmallen
+    wp_enqueue_style('custom-email-styles', get_template_directory_uri() . 'wp-content/themes/mytheme/woocommerce/emails/email-styles.css');
+}
+add_action('woocommerce_email_header', 'enqueue_custom_email_styles');

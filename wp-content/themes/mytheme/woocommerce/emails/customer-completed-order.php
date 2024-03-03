@@ -16,17 +16,22 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+    exit;
 }
+?>
 
+<?php
 /*
- * @hooked WC_Emails::email_header() Output the email header
- */
+* @hooked WC_Emails::email_header() Output the email header
+*/
 do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
+
+<!-- Add your logo here -->
+<img src="<?php echo get_template_directory_uri() . '/assets/images/logo_black.png'; ?>" alt="Your Logo" style="margin-bottom: 20px;">
 
 <?php /* translators: %s: Customer first name */ ?>
 <p><?php printf( esc_html__( 'Hi %s,', 'woocommerce' ), esc_html( $order->get_billing_first_name() ) ); ?></p>
-<p><?php esc_html_e( 'We have finished processing your order.', 'woocommerce' ); ?></p>
+<p><?php esc_html_e( 'We have finished processing your order and your CYBER-products will arrive shortly.', 'woocommerce' ); ?></p>
 <?php
 
 /*
@@ -52,7 +57,7 @@ do_action( 'woocommerce_email_customer_details', $order, $sent_to_admin, $plain_
  * Show user-defined additional content - this is set in each email's settings.
  */
 if ( $additional_content ) {
-	echo wp_kses_post( wpautop( wptexturize( $additional_content ) ) );
+    echo wp_kses_post( wpautop( wptexturize( $additional_content ) ) );
 }
 
 /*
