@@ -21,6 +21,9 @@
     }
 
     .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         
         &.columns-3 {
             
@@ -75,6 +78,11 @@
     }
 }
 
+.product {
+    width: calc(33.333% - 20px); /* Räknar ut bredden för att visa 3 produkter per rad med marginal */
+    margin-bottom: 20px; /* Lägg till lite mellanrum mellan produkterna */
+}
+
 /* Ändra färg och ta bort hyperlänkstil för produktlänkar */
 .woocommerce-loop-product__link,
 .woocommerce-loop-product__link:hover,
@@ -102,3 +110,24 @@
   }
 
 
+// Overlay-effekt för produktkort
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.star-rating-overlay {
+    color: yellow; // Stjärnfärg
+    font-size: 24px; // Storlek på stjärnor
+}
+
+.star-rating-overlay .fa-star {
+    margin: 0 2px; // Avstånd mellan stjärnorna
+}

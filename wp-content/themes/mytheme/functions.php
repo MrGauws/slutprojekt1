@@ -1,5 +1,4 @@
 <?php
-
 if(!defined('ABSPATH')){
     exit;
 }
@@ -13,9 +12,7 @@ function mytheme_add_woocommerce_support() {
 }
 add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
 
-
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-
 
 add_action('wp_enqueue_scripts', 'enqueue_woocommerce_scripts');
 
@@ -38,19 +35,11 @@ function custom_theme_widgets_init() {
 }
 add_action( 'widgets_init', 'custom_theme_widgets_init' );
 
-
 // Funktion för att hantera AJAX-begäran för att spara liked-statusen
 function save_product_like_status() {
     // Hämta produkt-ID från AJAX-begäran
     $product_id = isset($_POST['product_id']) ? intval($_POST['product_id']) : 0;
-    
-    // Spara liked-statusen i sessionen eller någon annanstans om användaren inte är inloggad
-    // Här kan du använda din egen logik för att spara statusen, till exempel i sessionen eller genom en cookie
-
-    // Skicka ett svar tillbaka till JavaScript
     echo json_encode(array('success' => true));
-    
-    // Viktigt att avsluta scriptet efter AJAX-hanteringen
     wp_die();
 }
 add_action('wp_ajax_save_product_like_status', 'save_product_like_status');
@@ -62,3 +51,110 @@ function enqueue_custom_scripts() {
     wp_enqueue_script('custom-checkout-scripts', get_template_directory_uri() . '/resources/js/checkout.js', array('jquery'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+
+// Första AJAX-funktionen för att ladda fler produkter
+add_action( 'wp_ajax_load_more_products', 'load_more_products_ajax' );
+add_action( 'wp_ajax_nopriv_load_more_products', 'load_more_products_ajax' );
+
+function load_more_products_ajax() {
+    $page = $_POST['page'];
+    $products_per_page = 6; 
+    $offset = ($page - 1) * $products_per_page;
+
+    $args = array(
+        'post_type' => 'product',
+        'posts_per_page' => $products_per_page,
+        'offset' => $offset,
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            wc_get_template_part('content', 'product');
+        }
+    }
+
+    wp_reset_postdata();
+    die();
+}
+
+// Andra AJAX-funktionen för att ladda fler produkter
+add_action( 'wp_ajax_my_load_more_products', 'my_load_more_products_ajax' );
+add_action( 'wp_ajax_nopriv_my_load_more_products', 'my_load_more_products_ajax' );
+
+function my_load_more_products_ajax() {
+    $page = $_POST['page'];
+    $products_per_page = 6; 
+    $offset = ($page - 1) * $products_per_page;
+
+    $args = array(
+        'post_type' => 'product',
+        'posts_per_page' => $products_per_page,
+        'offset' => $offset,
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            // Visa produkten
+            wc_get_template_part('content', 'product');
+        }
+    }
+
+    wp_reset_postdata();
+    die();
+}
+
+add_shortcode('load_more_products', 'load_more_products_function');
+function load_more_products_function() { ?>
+    <button id="load-more-btn">Load More Products</button>
+<?php }
+
+add_action( 'wp_footer', 'ajax_load_more_products' );
+function ajax_load_more_products() { ?>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        var page = 2; 
+        var canLoad = true; 
+
+        $(window).scroll(function() {
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                if (canLoad) {
+                    fetchProducts();
+                }
+            }
+        });
+
+        function fetchProducts() {
+            $.ajax({
+                url: '<?php echo admin_url('admin-ajax.php'); ?>',
+                type: 'post',
+                data: {
+                    action: 'my_load_more_products', 
+                    page: page,
+                },
+                success: function(response) {
+                    if (response.trim() != '') {
+                        $('#product-container').append(response);
+                        page++;
+                    } else {
+                        canLoad = false; 
+                    }
+                }
+            });
+        }
+    });
+</script>
+<?php }
+
+add_action( 'pre_get_posts', 'custom_products_per_page' );
+function custom_products_per_page( $query ) {
+    if ( ! is_admin() && is_post_type_archive( 'product' ) && $query->is_main_query() ) {
+        $query->set( 'posts_per_page', 6 ); 
+    }
+}
+?>

@@ -1,60 +1,172 @@
 // Base styling för formuläret
 form.checkout {
-    // Din styling här
 }
 
 // KCO-wrapper
 #kco-wrapper {
-
 }
 
 // KCO-order-review
 #kco-order-review {
-    width: 512px;
-    height: 704px;
+    width: auto;
+    height: auto;
     padding: 32px 24px;
     border-radius: 10px;
     gap: 24px;
+    background-color: white; // Behåll bakgrundsfärgen
+}
+
+.shop_table.woocommerce-checkout-review-order-table {
+    background-color: white; // Behåll bakgrundsfärgen
 }
 
 // Selector för varje produkt i tabellen
 .shop_table.woocommerce-checkout-review-order-table tbody tr.cart_item {
     // Produktattribut
-    width: 464px;
-    height: 72px;
-    padding: 16px 0 16px 16px;
+    width: 100%; // Ändra bredden för att anpassa sig till den nya layouten
+    height: auto; // Använd automatisk höjd för att anpassa sig till innehållet
+    padding: 16px;
     border-radius: 13px;
     gap: 16px;
-    color: #F6F6F6;
-
-    // Om du behöver ytterligare anpassning för varje cell, kan du använda följande selektorer:
+    color: #000000; // Behåll textfärgen
 
     // Produktens namn
     .product-name {
-        // Textattribut för produktnamn
-        font-family: "SF Pro Display";
+        // Behåll textattribut för produktnamn
+        font-family: $sf-font;
         font-size: 16px;
         font-weight: 500;
         line-height: 24px;
-        letter-spacing: 0em;
         text-align: left;
-        color: #000000;
+        color: #000000; // Behåll textfärgen
     }
 
     // Produktens subtotal
     .product-total {
-        // Textattribut för pris
+        // Behåll textattribut för pris
         font-family: $sf-font;
         font-size: 16px;
         font-weight: 600;
         line-height: 24px;
-        letter-spacing: 0em;
         text-align: right;
-        color: #000000;
+        color: #000000; // Behåll textfärgen
+    }
+}
+
+// Rubrik för Billing Details
+.woocommerce-billing-fields {
+    margin-bottom: 20px;
+
+    h3 {
+        font-family: 'SF Pro Display', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        color: #000000; // Behåll textfärgen
+    }
+
+    // Styling för varje enskilt fält
+    p.form-row {
+        label {
+            display: block;
+            font-family: 'SF Pro Display', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #000000; // Behåll textfärgen
+        }
+
+        // Textinmatningsfält
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: 'SF Pro Display', sans-serif;
+            margin-bottom: 0; // <-- Ingen mellanrum mellan fälten
+        }
+
+        // Alternativet (optional)
+        span.optional {
+            font-style: italic;
+            font-size: 14px;
+            color: #666;
+        }
+    }
+
+    // Använd margin-bottom endast för föräldern till alla form-row element utom det sista
+    > .woocommerce-billing-fields__field-wrapper {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// Specifik styling för olika skärmstorlekar
+@media screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+
+        .left-column,
+        .right-column {
+            margin-right: 0;
+            margin-left: 0;
+        }
     }
 }
 
 .shop_table.woocommerce-checkout-review-order-table tbody tr.cart_item {
+    margin-left: 20px;
+    padding: 16px 56px 16px 36px;
     background-color: #F6F6F6;
+
+    // Återställ flexbox-inställningarna för att åtgärda gapen
+    display: flex;
+    align-items: center;
+
+    // Justera avståndet mellan innehållselementen
+    .product-thumbnail,
+    .product-name,
+    .product-total {
+        margin: 0;
+    }
+
+    // Produktens namn
+    .product-name {
+        flex: 1;
+        font-family: $sf-font;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        color: #000000;
+        white-space: nowrap; // Förhindra radbrytning
+        overflow: hidden; // Dölj eventuell överflödande text
+        text-overflow: ellipsis; // Visa ellipsis för överskridande text
+    }
+
+    // Produktens subtotal
+    .product-total {
+        font-family: $sf-font;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: #000000;
+    }
 }
 
+.woocommerce table.shop_table td {
+    border-top: none;
+    padding: 0;
+}
+
+.woocommerce table.shop_table tbody th, .woocommerce table.shop_table tfoot td, .woocommerce table.shop_table tfoot th {
+    border: none;
+}
+
+#shipping_phone_field {
+    display: none;
+}

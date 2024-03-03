@@ -18,7 +18,7 @@
         <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo_black.png'; ?>" alt="Logo">
     </div>
     <div class="search_input">
-      	
+    <?php echo do_shortcode('[live_search]'); ?>
     </div>
     </div>
     <div class="right_head">

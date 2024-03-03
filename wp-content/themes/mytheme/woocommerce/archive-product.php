@@ -45,50 +45,29 @@ do_action( 'woocommerce_before_main_content' );
 	do_action( 'woocommerce_archive_description' );
 	?>
 </header>
+
+<div id="products" class="products">
+    <?php
+    if ( woocommerce_product_loop() ) {
+        woocommerce_product_loop_start();
+        
+        while ( have_posts() ) {
+            the_post();
+            wc_get_template_part( 'content', 'product' );
+        }
+
+        woocommerce_product_loop_end();
+    } else {
+        do_action( 'woocommerce_no_products_found' );
+    }
+    ?>
+</div>
+
+<div class="load-more">
+    <button id="load-more-button">Load More Products</button>
+</div>
+
 <?php
-if ( woocommerce_product_loop() ) {
-
-	/**
-	 * Hook: woocommerce_before_shop_loop.
-	 *
-	 * @hooked woocommerce_output_all_notices - 10
-	 * @hooked woocommerce_result_count - 20
-	 * @hooked woocommerce_catalog_ordering - 30
-	 */
-	do_action( 'woocommerce_before_shop_loop' );
-
-	woocommerce_product_loop_start();
-
-	if ( wc_get_loop_prop( 'total' ) ) {
-		while ( have_posts() ) {
-			the_post();
-
-			/**
-			 * Hook: woocommerce_shop_loop.
-			 */
-			do_action( 'woocommerce_shop_loop' );
-
-			wc_get_template_part( 'content', 'product' );
-		}
-	}
-
-	woocommerce_product_loop_end();
-
-	/**
-	 * Hook: woocommerce_after_shop_loop.
-	 *
-	 * @hooked woocommerce_pagination - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop' );
-} else {
-	/**
-	 * Hook: woocommerce_no_products_found.
-	 *
-	 * @hooked wc_no_products_found - 10
-	 */
-	do_action( 'woocommerce_no_products_found' );
-}
-
 /**
  * Hook: woocommerce_after_main_content.
  *
@@ -102,8 +81,36 @@ do_action( 'woocommerce_after_main_content' );
  * @hooked woocommerce_get_sidebar - 10
  */
 //do_action( 'woocommerce_sidebar' );
+?>
 
+<script type="text/javascript">
+    jQuery(function($){
+        var page = 2; // Start page for AJAX request
+        var loading = false; // Variable to prevent multiple AJAX loads
 
+        $(document).on('click', '#load-more-button', function(){
+            if( ! loading ) {
+                loading = true;
+                var data = {
+                    'action': 'my_load_more_products',
+                    'query': <?php echo json_encode( $GLOBALS['wp_query']->query_vars ); ?>,
+                    'page': page
+                };
 
+                $.ajax({
+                    url: '<?php echo admin_url('admin-ajax.php'); ?>',
+                    data: data,
+                    type: 'POST',
+                    success: function(response) {
+                        $('#products').append(response);
+                        page++;
+                        loading = false;
+                    }
+                });
+            }
+        });
+    });
+</script>
 
+<?php
 get_footer( 'shop' );
