@@ -62,11 +62,11 @@ defined( 'ABSPATH' ) || exit;
             <tfoot>
 
             <?php
-                // Hämta kundens faktureringsadress
+                // Hämtar kundens faktureringsadress
                 $billing_address = WC()->customer->get_billing_address();
                 ?>
 
-                <!-- Visa faktureringsadressen om den är satt -->
+                <!-- Visa faktureringsadressen om provided -->
                 <tr class="cart-address">
                     <th><?php esc_html_e('Address', 'woocommerce'); ?></th>
                     <td><?php echo esc_html( $billing_address ); ?></td>
@@ -76,20 +76,30 @@ defined( 'ABSPATH' ) || exit;
                     <th><?php esc_html_e( 'Shipment method', 'woocommerce' ); ?></th>
                     <td>
                     <?php
-                    $shipping_methods = WC()->session->get( 'chosen_shipping_methods' );
-                    $chosen_shipping = $shipping_methods[0];
-                    
-                    // Check if the chosen shipping method is 'free_shipping:1'
-                    if ( 'free_shipping:1' === $chosen_shipping ) {
-                        // Manually translate 'free_shipping:1' to 'Fri Frakt' (or your desired translation)
-                        $translated_shipping = 'Fri Frakt';
-                    } else {
-                        // If not 'free_shipping:1', use the built-in translation function
-                        $translated_shipping = __( $chosen_shipping, 'woocommerce' );
-                    }
-                    
-                    echo $translated_shipping;
-                    ?>
+                        $shipping_methods = WC()->session->get('chosen_shipping_methods');
+                        $chosen_shipping = $shipping_methods[0];
+
+                        // Översättningsfunktion
+                        function translate_shipping_method($method_id) {
+                            switch ($method_id) {
+                                case 'free_shipping:1':
+                                    return 'Fri Frakt';
+                                case 'flat_rate:2':
+                                    return 'PostNord';
+                                case 'flat_rate:3':
+                                    return 'DB Schenker';
+                                case 'flat_rate:4':
+                                    return 'DB Schenker ++';
+                                default:
+                                    return __( $method_id, 'woocommerce' );
+                            }
+                        }
+
+                        // cALLar ppå översättningsfunktionen
+                        $translated_shipping = translate_shipping_method($chosen_shipping);
+
+                        echo $translated_shipping;
+                        ?>
                     </td>
                 </tr>
                 

@@ -173,3 +173,100 @@ form.checkout {
 .cart_item {
     margin-bottom: 10px;
 }
+.row {
+    display: flex;
+}
+
+.left-column,
+.right-column {
+    flex: 1;
+}
+
+.left-column {
+    margin-right: 20px; // Justera mellanrummet mellan kolumnerna efter behov
+}
+.shop_table.woocommerce-checkout-review-order-table tbody tr {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; // Justera mellanrummet mellan varje artikel efter behov
+}
+
+.shop_table.woocommerce-checkout-review-order-table tbody td {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px; // Justera avståndet mellan kolumnerna efter behov
+}
+
+.shop_table.woocommerce-checkout-review-order-table {
+    width: 900px !important; // Ange den önskade bredden och använd !important för att säkerställa att denna regel prioriteras
+}
+
+.wc_payment_methods.payment_methods.methods {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .wc_payment_methods.payment_methods.methods li {
+    flex: 1;
+    text-align: center;
+    border-bottom: 2px solid transparent; /* Lägg till en transparent bottenkant */
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .wc_payment_methods.payment_methods.methods li input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    border: 1px solid #000000; /* Byt ut #0000 mot #000000 för att få en svart färg */
+}
+  
+  .payment_methods.methods li.active {
+    border-bottom: 2px solid black;
+}
+#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment {
+    background-color: white;
+}
+
+
+
+
+#add_payment_method #payment div.payment_box, .woocommerce-cart #payment div.payment_box, .woocommerce-checkout #payment div.payment_box {
+    background-color: white;
+    
+}
+
+#wc-stripe-upe-form {
+    border: none; // Ta bort alla gränser från fieldset
+  }
+  
+  .wc-stripe-upe-element, #__PrivateStripeElement {
+    border: none !important; // Ta bort alla gränser från elementen
+  }
+  
+  .wc-stripe-upe-element input[type="text"],
+  .wc-stripe-upe-element input[type="number"],
+  .wc-stripe-upe-element input[type="email"],
+  .wc-stripe-upe-element input[type="tel"],
+  .wc-stripe-upe-element input[type="password"] {
+    border: 1px solid #CECECE; // Lägg till en 1px solid gräns runt inmatningsfälten
+  }
+
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+
+}
+.woocommerce-SavedPaymentMethods-saveNew.woocommerce-validated {
+    display: none !important;
+}
+
+#payment-form label[for="card_number"], 
+#payment-form label[for="card_expiry"], 
+#payment-form label[for="card_cvc"] {
+    display: none !important;
+}

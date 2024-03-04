@@ -97,27 +97,34 @@
     margin-right: 20px; /* Margin to the right */
 }
 
-// Overlay-effekt för produktkort
-.product-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    justify-content: center;
+// SCSS för att styla stjärnorna
+.woocommerce-product-rating {
+    display: flex;
     align-items: center;
+    justify-content: center;
+
+    .star {
+        font-size: 20px; // Storlek på stjärnorna
+        color: #ccc; // Färg för icke-fyllda stjärnor
+    }
+
+    .filled {
+        color: #ffc107; // Färg för fyllda stjärnor
+    }
+
+    .rating {
+        margin-left: 10px; // Avstånd mellan stjärnorna och betyget
+        font-size: 14px; // Storlek på betyget
+    }
+
+    .review-count {
+        margin-left: 10px; // Avstånd mellan betyget och recensionsantalet
+        font-size: 14px; // Storlek på recensionsantalet
+        color: #777; // Färg för recensionsantalet
+    }
 }
 
-.star-rating-overlay {
-    color: yellow; // Stjärnfärg
-    font-size: 24px; // Storlek på stjärnor
-}
 
-.star-rating-overlay .fa-star {
-    margin: 0 2px; // Avstånd mellan stjärnorna
-}
 /* Styla länken som en knapp */
 a.button.add_to_cart_button {
     display: inline-block;
@@ -134,4 +141,8 @@ a.button.add_to_cart_button {
     font-weight: 500;
     line-height: 24px;
     letter-spacing: 0em;
+}
+
+.star-rating {
+    display: none;
 }

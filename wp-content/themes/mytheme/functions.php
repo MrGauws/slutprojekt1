@@ -157,4 +157,30 @@ function custom_products_per_page( $query ) {
         $query->set( 'posts_per_page', 6 ); 
     }
 }
+
+function mytheme_widgets_init() {
+    register_sidebar( array(
+        'name'          => __( 'Shop Widget Area', 'mytheme' ),
+        'id'            => 'shop_widget_area',
+        'description'   => __( 'Widget area for the shop page.', 'mytheme' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'mytheme_widgets_init' );
+
+
+
+// Funktion för att visa widget-området före huvudinnehållet på shopsidan
+add_action( 'woocommerce_before_main_content', 'mytheme_display_shop_widget_area', 10 );
+function mytheme_display_shop_widget_area() {
+    if ( is_active_sidebar( 'shop_widget_area' ) ) {
+        echo '<div id="shop-widget-area" class="shop-widget-area">';
+        dynamic_sidebar( 'shop_widget_area' );
+        echo '</div>';
+    }
+}
 ?>
+

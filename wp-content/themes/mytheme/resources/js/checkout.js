@@ -4,20 +4,16 @@ jQuery(document).ready(function($) {
         // Find the table header with class "product-name" and text content "Product"
         $('th.product-name:contains("Product")').text('Summary');
     });
-});
 
-jQuery(document).ready(function($) {
-    // Funktion för att ställa in bredden på review-order-tabellen
-    function setReviewOrderTableWidth() {
-        var parentWidth = $('.row').width();
-        $('.woocommerce-checkout-review-order-table').css('width', parentWidth);
-    }
-    setReviewOrderTableWidth();
+    // Flytta #payment till .right-column
+    $('#payment').appendTo('.right-column');
 
-    // Lyssna på AJAX-evenemanget för att köra funktionen igen efter att AJAX har slutförts eftersom den första körs bort.
-    $(document).ajaxComplete(function() {
-        setReviewOrderTableWidth();
+    // Lyssna på ändringar i radio-knappar och tillämpa aktiv klass
+    $('input[type="radio"]').change(function() {
+        $('.payment_methods.methods li').removeClass('active');
+        if ($(this).is(':checked')) {
+            $(this).closest('li').addClass('active');
+        }
     });
 });
-
 
