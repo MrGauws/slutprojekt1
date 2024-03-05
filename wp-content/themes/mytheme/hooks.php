@@ -130,10 +130,39 @@ function replace_add_to_cart_text( $translated_text, $text, $domain ) {
 }
 add_filter( 'gettext', 'replace_add_to_cart_text', 20, 3 );
 
-
-function enqueue_custom_email_styles() {
-    // Ladda CSS-filen för e-postmallen
-    wp_enqueue_style('custom-email-styles', get_template_directory_uri() . 'wp-content/themes/mytheme/woocommerce/emails/email-styles.css');
+function replace_select_options_text( $translated_text, $text, $domain ) {
+    if ( 'woocommerce' === $domain && 'Select options' === $text ) {
+        $translated_text = 'Buy Now';
+    }
+    return $translated_text;
 }
-add_action('woocommerce_email_header', 'enqueue_custom_email_styles');
+add_filter( 'gettext', 'replace_select_options_text', 20, 3 );
 
+
+add_action( 'woocommerce_review_order_before_submit', 'add_back_button_before_place_order_button' );
+
+function add_back_button_before_place_order_button() {
+    ?>
+    <button type="button" class="button alt back-button">Back</button>
+    <?php
+}
+add_action('woocommerce_review_order_before_submit', 'add_back_button_before_place_order_button');
+
+
+function replace_place_order_text( $translated_text, $text, $domain ) {
+    // Kolla om texten är "Place order"
+    if ( 'Place order' === $text ) {
+        // Byt ut texten till "Pay"
+        $translated_text = 'Pay';
+    }
+    return $translated_text;
+}
+add_filter( 'gettext', 'replace_place_order_text', 20, 3 );
+
+
+function move_product_filter_form() {
+    echo '<div id="shop-widget-area" class="shop-widget-area">';
+    echo do_shortcode('[wcapf_form]'); // Use the shortcode provided in the settings
+    echo '</div>';
+}
+add_action( 'woocommerce_before_shop_loop', 'move_product_filter_form' );

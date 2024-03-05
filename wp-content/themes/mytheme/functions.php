@@ -52,33 +52,7 @@ function enqueue_custom_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
-// Första AJAX-funktionen för att ladda fler produkter
-add_action( 'wp_ajax_load_more_products', 'load_more_products_ajax' );
-add_action( 'wp_ajax_nopriv_load_more_products', 'load_more_products_ajax' );
 
-function load_more_products_ajax() {
-    $page = $_POST['page'];
-    $products_per_page = 6; 
-    $offset = ($page - 1) * $products_per_page;
-
-    $args = array(
-        'post_type' => 'product',
-        'posts_per_page' => $products_per_page,
-        'offset' => $offset,
-    );
-
-    $query = new WP_Query($args);
-
-    if ($query->have_posts()) {
-        while ($query->have_posts()) {
-            $query->the_post();
-            wc_get_template_part('content', 'product');
-        }
-    }
-
-    wp_reset_postdata();
-    die();
-}
 
 // Andra AJAX-funktionen för att ladda fler produkter
 add_action( 'wp_ajax_my_load_more_products', 'my_load_more_products_ajax' );
@@ -109,46 +83,45 @@ function my_load_more_products_ajax() {
     die();
 }
 
-add_shortcode('load_more_products', 'load_more_products_function');
-function load_more_products_function() { ?>
-    <button id="load-more-btn">Load More Products</button>
-<?php }
-
 add_action( 'wp_footer', 'ajax_load_more_products' );
 function ajax_load_more_products() { ?>
-<script type="text/javascript">
-    jQuery(document).ready(function($) {
-        var page = 2; 
-        var canLoad = true; 
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            var page = 2; 
+            var canLoad = true; 
 
-        $(window).scroll(function() {
-            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-                if (canLoad) {
-                    fetchProducts();
-                }
-            }
-        });
-
-        function fetchProducts() {
-            $.ajax({
-                url: '<?php echo admin_url('admin-ajax.php'); ?>',
-                type: 'post',
-                data: {
-                    action: 'my_load_more_products', 
-                    page: page,
-                },
-                success: function(response) {
-                    if (response.trim() != '') {
-                        $('#product-container').append(response);
-                        page++;
-                    } else {
-                        canLoad = false; 
+            $(window).scroll(function() {
+                if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                    if (canLoad) {
+                        fetchProducts();
                     }
                 }
             });
-        }
-    });
-</script>
+
+            function fetchProducts() {
+                $.ajax({
+                    url: '<?php echo admin_url('admin-ajax.php'); ?>',
+                    type: 'post',
+                    data: {
+                        action: 'my_load_more_products', 
+                        page: page,
+                    },
+                    success: function(response) {
+                        if (response.trim() != '') {
+                            // Find the ul.products container
+                            var $productsContainer = $('.products.columns-3');
+
+                            // Append the response to the products container
+                            $productsContainer.append(response);
+                            page++;
+                        } else {
+                            canLoad = false; 
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 <?php }
 
 add_action( 'pre_get_posts', 'custom_products_per_page' );
@@ -182,5 +155,12 @@ function mytheme_display_shop_widget_area() {
         echo '</div>';
     }
 }
+
+
+
+
+
+
+
 ?>
 

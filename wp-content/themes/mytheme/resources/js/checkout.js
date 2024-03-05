@@ -17,3 +17,12 @@ jQuery(document).ready(function($) {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Hitta checkboxen med ID "terms"
+    var checkbox = document.getElementById("terms");
+    
+    // Markera checkboxen som klickad
+    checkbox.checked = true;
+});
+
+

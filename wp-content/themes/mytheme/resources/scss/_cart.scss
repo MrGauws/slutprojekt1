@@ -1,0 +1,197 @@
+.woocommerce-cart-form {
+    background-color: transparent;
+    width: 50%;
+    font-size: 16px;
+
+    .shop_table_responsive {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border: none;
+        border-spacing: 0 40px;
+        margin-bottom: 0;
+        padding: 0;
+
+        thead {
+            display: none;
+        }
+
+        tbody {
+            width: 100%;
+
+            .cart_item {
+                td {
+                    border-top: none;
+                    border-bottom: 1px solid rgba(122, 120, 120, 0.249);
+                }
+
+                .product-name a {
+                    color: black;
+                }
+
+                .product-price {
+                    display: none;
+                }
+
+                .product-remove a.remove {
+                    color: black !important;
+
+                    &:hover {
+                        background-color: black;
+                        color: #fff !important;
+                    }
+                }
+
+                .product-quantity {
+                    .quantity {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        input[type="number"] {
+                            width: 32px;
+                            height: 32px;
+                            border: 1px solid rgba(122, 120, 120, 0.249);
+                            border-radius: 5px;
+
+                            &::-webkit-inner-spin-button,
+                            &::-webkit-outer-spin-button {
+                                -webkit-appearance: none;
+                                margin: 0;
+                            }
+
+                            & {
+                                -moz-appearance: textfield;
+                            }
+                        }
+
+                        .prqu_minus,
+                        .prqu_plus {
+                            margin-right: 10px;
+                            margin-left: 10px;
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cart-collaterals {
+    background-color: transparent;
+    width: 40%;
+    height: 60vh;
+    padding: 5%;
+    border: 1px solid #EBEBEB;
+    border-radius: 10px;
+    margin-left: 2%;
+
+    .cart_totals {
+        width: 100%;
+        height: 60vh;
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            width: 100%;
+            text-align: left;
+            font-size: 20px;
+        }
+
+        .coupon {
+            height: auto;
+            width: 99%;
+            position: relative;
+            display: block;
+            flex-direction: row;
+
+            label.coupon_label {
+                height: 20px;
+                width: 50%;
+                color: $secondary_text_color;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            input.input-text {
+                display: block;
+                border: 0.5px solid #9F9F9F;
+                border-radius: 7px;
+                margin-top: 10px;
+                height: 56px;
+                width: calc(100% - 10px);
+                margin-bottom: 5%;
+                padding-left: 20px;
+                position: relative;
+            }
+
+            .apply-input {
+                position: relative;
+                height: 56px;
+                margin-bottom: 0%;
+
+                .button {
+                    position: absolute;
+                    bottom: 7px;
+                    right: 0;
+                    border: $border;
+                    border-radius: 6px;
+                    background-color: transparent;
+                }
+            }
+        }
+
+        table.shop_table {
+            display: grid;
+            gap: 16px;
+            border: none;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        tbody {
+            width: 100%;
+
+            tr {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                th {
+                    border: none;
+                    padding-left: 0;
+                }
+
+                td {
+                    float: right;
+                    border: none;
+                    padding-right: 0;
+                }
+            }
+
+            .order-tax,
+            .shipping {
+                width: 100%;
+
+                th {
+                    color: $secondary_text_color;
+                }
+            }
+
+            .order-total {
+                width: 100%;
+
+                td {
+                    float: right;
+
+                    small {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

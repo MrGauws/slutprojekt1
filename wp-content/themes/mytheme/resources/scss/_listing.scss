@@ -24,10 +24,17 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 10%;
+        margin-left: 20%;
+        margin-left: auto;
+
+        .wcapf-form {
+            width: 15%; 
+            margin-right: 20px; 
+}
         
         li.product {
-            margin-bottom: 10%; /* Lägg till margin-bottom istället för margin-right */
-            margin-right: 0; /* Ta bort margin-right */
+            margin-bottom: 10%; 
+            margin-right: 0; 
             padding: 20px;
             border-radius: 5px;
             background-color: #F6F6F6;
@@ -67,11 +74,18 @@
                 list-style-type: none;
             }
         }
+        
     }
+    
 }
 
+.archive-product-container {
+    display: flex;
+}
+
+
 .product {
-    width: 100%; /* Full bredd för produkter */
+    width: 100%; 
     margin-bottom: 20px;
 }
 
@@ -94,7 +108,7 @@
 .like-button {
     border: none;
     background-color: rgba(0, 0, 0, 0);
-    margin-right: 20px; /* Margin to the right */
+    margin-right: 20px; 
 }
 
 // SCSS för att styla stjärnorna
@@ -104,36 +118,36 @@
     justify-content: center;
 
     .star {
-        font-size: 20px; // Storlek på stjärnorna
-        color: #ccc; // Färg för icke-fyllda stjärnor
+        font-size: 20px; 
+        color: #ccc; 
     }
 
     .filled {
-        color: #ffc107; // Färg för fyllda stjärnor
+        color: #ffc107; 
     }
 
     .rating {
-        margin-left: 10px; // Avstånd mellan stjärnorna och betyget
-        font-size: 14px; // Storlek på betyget
+        margin-left: 10px; 
+        font-size: 14px; 
     }
 
     .review-count {
-        margin-left: 10px; // Avstånd mellan betyget och recensionsantalet
-        font-size: 14px; // Storlek på recensionsantalet
-        color: #777; // Färg för recensionsantalet
+        margin-left: 10px; 
+        font-size: 14px; 
+        color: #777; 
     }
 }
 
 
-/* Styla länken som en knapp */
+
 a.button.add_to_cart_button {
     display: inline-block;
     width: auto;
     height: auto;
     padding: 12px 64px;
     border-radius: 8px;
-    background-color: #000000; /* Byt ut med önskad färg */
-    color: #ffffff; /* Byt ut med önskad färg */
+    background-color: #000000; 
+    color: #ffffff; 
     text-decoration: none;
     text-align: center;
     font-family: 'SF Pro Display', sans-serif;
@@ -145,4 +159,72 @@ a.button.add_to_cart_button {
 
 .star-rating {
     display: none;
+}
+
+
+
+
+.wcapf-range-slider.style-1 {
+    width: 100%; 
+}
+
+
+.wcapf-noui-slider .wcapf-noui-handle {
+    width: 20px; 
+    height: 20px; 
+    margin-left: -10px; 
+    margin-top: -7px; 
+}
+
+
+.wcapf-noui-slider .wcapf-noui-base {
+    background-color: #ddd; 
+}
+
+.wcapf-noui-slider .wcapf-noui-handle {
+    background-color: #414141; 
+    border: 2px solid #CECECE; 
+}
+
+.wcapf-noui-slider .wcapf-noui-handle:hover {
+    background-color: #414141; 
+    border-color: #414141; 
+}
+
+
+$filter-title-color: #333;
+$filter-background-color: #f4f4f4;
+$filter-border-color: #ddd;
+
+
+.wcapf-form {
+    width: 30%; 
+    margin: 20px; 
+    padding: 20px; 
+    a {
+        color: #007bff; 
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.wcapf-range-wrapper input[type=text],
+.wcapf-range-wrapper input[type=number] {
+    width: auto; 
+    height: 40px;
+    padding: 8px 64px 8px 8px;
+    border-radius: 3px;
+    border: 0.5px solid #9F9F9F;
+    gap: 8px;
+}
+.wcapf-range-separator {
+    width: 20px;
+    color: #E7E7E7;
+}
+
+.wcapf-filter-title {
+    border-bottom: 0.5px solid #B5B5B5;
+    transform: rotate(0deg); 
 }

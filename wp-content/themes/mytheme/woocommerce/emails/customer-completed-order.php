@@ -26,7 +26,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 */
 do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
-<!-- Add your logo here -->
 <img src="<?php echo get_template_directory_uri() . '/assets/images/logo_black.png'; ?>" alt="Your Logo" style="margin-bottom: 20px;">
 
 <?php /* translators: %s: Customer first name */ ?>
