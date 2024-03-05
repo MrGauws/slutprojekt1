@@ -17,9 +17,7 @@ add_filter( 'woocommerce_breadcrumb_defaults', 'change_breadcrumb_delimiter' );
 
 
 function change_shipping_text($translated_text, $text, $domain) {
-    // Kolla om texten matchar "Shipping" och är i rätt domän
     if ($text === 'Shipping' && $domain === 'woocommerce') {
-        // Ändra texten till "Estimated shipping & Handling"
         $translated_text = __('Estimated shipping & Handling', 'woocommerce');
     }
     return $translated_text;
@@ -72,30 +70,27 @@ function get_menu_image_url($title) {
 }
 
 
-// Change "Product" label to "Summary" in the checkout review order table
 add_filter('woocommerce_checkout_order_review', 'change_product_label_to_summary');
 function change_product_label_to_summary($html) {
-    // Replace "Product" with "Summary" in the table header
     $html = str_replace('<th class="product-name">Product</th>', '<th class="product-name">Summary</th>', $html);
     return $html;
 }
 
 
 
-// Funktionen för att skapa stjärnbetyget
+// Stjärnor
 add_action( 'woocommerce_after_shop_loop_item_title', 'add_custom_rating_pro', 5 );
 function add_custom_rating_pro() {
     global $product;
 
-    // Kontrollera om produkten har recensioner
+    // har produkten recensioner?
     if ( $product->get_review_count() > 0 ) {
         $average_rating = $product->get_average_rating();
         $rating_count = $product->get_review_count();
 
-        // Skapa HTML för stjärnbetyget
         $output = '<div class="woocommerce-product-rating">';
 
-        // Rita fyllda stjärnor baserat på genomsnittligt betyg
+        // fyllda stjärnor baserat på genomsnittligt betyg
         for ($i = 1; $i <= 5; $i++) {
             if ($i <= round($average_rating)) {
                 $output .= '<span class="star filled">★</span>';
@@ -105,8 +100,6 @@ function add_custom_rating_pro() {
         }
 
         $output .= '</div>';
-
-        // Skriv ut stjärnbetyget
         echo $output;
     }
 }
@@ -115,7 +108,7 @@ function add_custom_rating_pro() {
 
 add_filter( 'woocommerce_checkout_cart_item_class', 'custom_checkout_cart_item_class', 10, 3 );
 function custom_checkout_cart_item_class( $class, $cart_item, $cart_item_key ) {
-    $class[] = 'custom-width'; // Lägg till klassen 'custom-width'
+    $class[] = 'custom-width'; 
     return $class;
 }
 
@@ -150,9 +143,7 @@ add_action('woocommerce_review_order_before_submit', 'add_back_button_before_pla
 
 
 function replace_place_order_text( $translated_text, $text, $domain ) {
-    // Kolla om texten är "Place order"
     if ( 'Place order' === $text ) {
-        // Byt ut texten till "Pay"
         $translated_text = 'Pay';
     }
     return $translated_text;
@@ -162,7 +153,7 @@ add_filter( 'gettext', 'replace_place_order_text', 20, 3 );
 
 function move_product_filter_form() {
     echo '<div id="shop-widget-area" class="shop-widget-area">';
-    echo do_shortcode('[wcapf_form]'); // Use the shortcode provided in the settings
+    echo do_shortcode('[wcapf_form]');
     echo '</div>';
 }
 add_action( 'woocommerce_before_shop_loop', 'move_product_filter_form' );

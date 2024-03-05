@@ -270,7 +270,7 @@
 .woocommerce-checkout #payment div.payment_box::before {
     content: "";
     display: block;
-    border-bottom: 2px solid #000000; /* Ändrad egenskap för att skapa ett streck i toppen */
+    border-bottom: 2px solid #000000; 
     width: 25%;
     margin-right: 20px;
     
@@ -285,33 +285,33 @@
 }
 
 #place_order {
-    width: 244.5px; /* Bredden på knappen */
-    height: 64px; /* Höjden på knappen */
-    padding: 24px 86px; /* Inre utfyllnad */
-    border-radius: 6px; /* Rundade hörn */
-    gap: 8px; /* Mellanrum mellan innehåll och ram */
-    background-color: #000000; /* Bakgrundsfärg */
-    color: #ffffff; /* Textfärg */
-    border: none; /* Ingen ram */
-    cursor: pointer; /* Muspekare */
-    font-size: 16px; /* Textstorlek */
-    text-align: center; /* Textjustering */
-    margin-right: 31%; /* Flytta 20% från höger sida */
+    width: 244.5px; 
+    height: 64px; 
+    padding: 24px 86px; 
+    border-radius: 6px; 
+    gap: 8px; 
+    background-color: #000000; 
+    color: #ffffff; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 16px; 
+    text-align: center; 
+    margin-right: 31%; 
 }
 
 .back-button {
-    width: 244.5px; /* Bredden på knappen */
-    height: 64px; /* Höjden på knappen */
-    padding: 24px 86px; /* Inre utfyllnad */
-    border: 1px solid #000000 !important; /* Ändrat till 2px och solid */
-    border-radius: 6px !important; /* Rundade hörn */
-    gap: 8px; /* Mellanrum mellan innehåll och ram */
-    background-color: #ffffff !important; /* Vit bakgrundsfärg */
-    color: #000000 !important; /* Svart textfärg */
-    cursor: pointer; /* Muspekare */
-    font-size: 16px; /* Textstorlek */
-    text-align: center; /* Textjustering */
-    margin-left: 4% !important; /* Flytta 20% från höger sida */
+    width: 244.5px; 
+    height: 64px; 
+    padding: 24px 86px; 
+    border: 1px solid #000000 !important; 
+    border-radius: 6px !important; 
+    gap: 8px; 
+    background-color: #ffffff !important; 
+    color: #000000 !important; 
+    cursor: pointer; 
+    font-size: 16px; 
+    text-align: center; 
+    margin-left: 4% !important; 
 }
 
 
@@ -323,6 +323,6 @@
     width: 100px;
     height: 60px;
     margin-bottom: 20px;
-    margin-left: 105%; /* Adjust margin to position it above the parent element */
+    margin-left: 105%; 
     margin-top: 40px;
 }

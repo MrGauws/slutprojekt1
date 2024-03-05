@@ -5,10 +5,10 @@ jQuery(document).ready(function($) {
         $('th.product-name:contains("Product")').text('Summary');
     });
 
-    // Flytta #payment till .right-column
+
     $('#payment').appendTo('.right-column');
 
-    // Lyssna på ändringar i radio-knappar och tillämpa aktiv klass
+
     $('input[type="radio"]').change(function() {
         $('.payment_methods.methods li').removeClass('active');
         if ($(this).is(':checked')) {
@@ -18,10 +18,8 @@ jQuery(document).ready(function($) {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Hitta checkboxen med ID "terms"
     var checkbox = document.getElementById("terms");
-    
-    // Markera checkboxen som klickad
+
     checkbox.checked = true;
 });
 

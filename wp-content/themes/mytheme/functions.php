@@ -22,6 +22,10 @@ function enqueue_woocommerce_scripts() {
     }
 }
 
+
+
+
+
 function custom_theme_widgets_init() {
     register_sidebar( array(
         'name'          => __( 'Shop Sidebar', 'custom-theme' ),
@@ -37,7 +41,6 @@ add_action( 'widgets_init', 'custom_theme_widgets_init' );
 
 // Funktion för att hantera AJAX-begäran för att spara liked-statusen
 function save_product_like_status() {
-    // Hämta produkt-ID från AJAX-begäran
     $product_id = isset($_POST['product_id']) ? intval($_POST['product_id']) : 0;
     echo json_encode(array('success' => true));
     wp_die();
@@ -46,15 +49,25 @@ add_action('wp_ajax_save_product_like_status', 'save_product_like_status');
 add_action('wp_ajax_nopriv_save_product_like_status', 'save_product_like_status');
 
 
+
+
+
+
+
+
 function enqueue_custom_scripts() {
-    // Enqueue the custom JavaScript file
     wp_enqueue_script('custom-checkout-scripts', get_template_directory_uri() . '/resources/js/checkout.js', array('jquery'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
 
 
-// Andra AJAX-funktionen för att ladda fler produkter
+
+
+
+
+
+
 add_action( 'wp_ajax_my_load_more_products', 'my_load_more_products_ajax' );
 add_action( 'wp_ajax_nopriv_my_load_more_products', 'my_load_more_products_ajax' );
 
@@ -74,7 +87,6 @@ function my_load_more_products_ajax() {
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
-            // Visa produkten
             wc_get_template_part('content', 'product');
         }
     }
@@ -108,10 +120,7 @@ function ajax_load_more_products() { ?>
                     },
                     success: function(response) {
                         if (response.trim() != '') {
-                            // Find the ul.products container
                             var $productsContainer = $('.products.columns-3');
-
-                            // Append the response to the products container
                             $productsContainer.append(response);
                             page++;
                         } else {
@@ -146,7 +155,10 @@ add_action( 'widgets_init', 'mytheme_widgets_init' );
 
 
 
-// Funktion för att visa widget-området före huvudinnehållet på shopsidan
+
+
+
+// widget-området shopsidan
 add_action( 'woocommerce_before_main_content', 'mytheme_display_shop_widget_area', 10 );
 function mytheme_display_shop_widget_area() {
     if ( is_active_sidebar( 'shop_widget_area' ) ) {

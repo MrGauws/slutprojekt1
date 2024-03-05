@@ -1,6 +1,6 @@
 footer {
-    position: relative; /* Relativ positionering för att footern ska vara relaterad till förälderelementet */
-    bottom: 0; /* Placera footern längst ned */
+    position: relative; 
+    bottom: 0; 
     width: 100%;
 
     background-color: black;
@@ -15,7 +15,7 @@ footer {
         .footercolumn {
             flex: 1;
             padding: 0 20px;
-            transform: translate(50px, 50px); /* Flytta kolumnerna 50px till höger och 50px ner */
+            transform: translate(50px, 50px); 
 
             &:first-child {
                 p {
@@ -25,7 +25,7 @@ footer {
                     line-height: 24px;
                     letter-spacing: 0em;
                     text-align: left;
-                    color: #CFCFCF; /* Lägg till färg */
+                    color: #CFCFCF; 
                     margin-bottom: 20px;
                 }
 
@@ -52,7 +52,7 @@ footer {
                 line-height: 16px;
                 letter-spacing: 0em;
                 text-align: left;
-                color: #FFFFFF; /* Lägg till färg */
+                color: #FFFFFF; 
                 margin-bottom: 10px;
             }
 
@@ -68,7 +68,7 @@ footer {
                     line-height: 32px;
                     letter-spacing: 0em;
                     text-align: left;
-                    color: #CFCFCF; /* Lägg till färg */
+                    color: #CFCFCF; 
 
                     a {
                         color: #CFCFCF;
