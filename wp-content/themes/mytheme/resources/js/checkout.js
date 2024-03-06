@@ -27,23 +27,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function applyFreeShipping() {
+    var orderTotalElement = document.querySelector('.order-total .woocommerce-Price-amount');
+    var shippingList = document.getElementById('shipping_method');
 
-    var orderTotal = parseFloat(document.querySelector('.order-total .woocommerce-Price-amount').textContent.replace(',', '.'));
-    if (orderTotal >= 1000) {
-        var shippingList = document.getElementById('shipping_method');
-        var freeShippingOption = shippingList.querySelector('li:first-child');
-        while (shippingList.childNodes.length > 1) {
-            shippingList.removeChild(shippingList.lastChild);
+    if (orderTotalElement && shippingList) {
+        var orderTotal = parseFloat(orderTotalElement.textContent.replace(',', '.'));
+        if (orderTotal >= 1000) {
+            var freeShippingOption = shippingList.querySelector('li:first-child');
+            if (freeShippingOption) {
+                while (shippingList.childNodes.length > 1) {
+                    shippingList.removeChild(shippingList.lastChild);
+                }
+                var input = freeShippingOption.querySelector('input[type="radio"]');
+                if (input) {
+                    input.checked = true;
+                }
+            }
         }
-        freeShippingOption.querySelector('input').checked = true;
     }
 }
-var observer = new MutationObserver(function(mutations) {
 
+var observer = new MutationObserver(function(mutations) {
     applyFreeShipping();
 });
+
 var config = { childList: true, subtree: true };
 observer.observe(document.body, config);
+
 document.addEventListener('DOMContentLoaded', function() {
     applyFreeShipping();
 });
@@ -103,3 +113,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+
