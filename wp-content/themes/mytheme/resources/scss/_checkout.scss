@@ -220,11 +220,11 @@
     cursor: pointer;
   }
 
-  .wc_payment_methods.payment_methods.methods li input[type="radio"] {
+  .wc_payment_methods.payment_methods.methods li input[type=radio] {
     position: absolute;
     opacity: 0;
     pointer-events: none;
-    border: 1px solid #000000; 
+    border: 1px solid #000000 !important;
 }
   
   .payment_methods.methods li.active {
@@ -325,6 +325,9 @@
     margin-left: 4% !important; 
 }
 
+.cart-subtotal td small.tax_label {
+    display: none !important;
+}
 
 
 #add_payment_method #payment div.payment_box::before,
@@ -334,8 +337,8 @@
     width: 100px;
     height: 60px;
     margin-bottom: 20px;
-    margin-left: 105%; 
-    margin-top: 40px;
+    margin-left: 115%; 
+    margin-top: 60px;
 }
 
 
