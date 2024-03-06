@@ -37,17 +37,16 @@
 
     // Produktens subtotal
     .product-total {
-        // Behåll textattribut för pris
         font-family: $sf-font;
         font-size: 16px;
         font-weight: 600;
         line-height: 24px;
         text-align: right;
-        color: #000000; // Behåll textfärgen
+        color: #000000; 
     }
 }
 
-// Rubrik för Billing Details
+
 .woocommerce-billing-fields {
     margin-bottom: 20px;
 
@@ -56,7 +55,7 @@
         font-size: 20px;
         font-weight: 500;
         margin-bottom: 10px;
-        color: #000000; // Behåll textfärgen
+        color: #000000; 
     }
 
     // Styling för varje enskilt fält
@@ -67,7 +66,7 @@
             font-size: 16px;
             font-weight: 500;
             margin-bottom: 5px;
-            color: #000000; // Behåll textfärgen
+            color: #000000; 
         }
 
         // Textinmatningsfält
@@ -81,10 +80,10 @@
             border-radius: 4px;
             font-size: 16px;
             font-family: 'SF Pro Display', sans-serif;
-            margin-bottom: 0; // <-- Ingen mellanrum mellan fälten
+            margin-bottom: 0; 
         }
 
-        // Alternativet (optional)
+        
         span.optional {
             font-style: italic;
             font-size: 14px;
@@ -92,7 +91,7 @@
         }
     }
 
-    // Använd margin-bottom endast för föräldern till alla form-row element utom det sista
+    
     > .woocommerce-billing-fields__field-wrapper {
         &:not(:last-child) {
             margin-bottom: 20px;
@@ -100,7 +99,7 @@
     }
 }
 
-// Specifik styling för olika skärmstorlekar
+
 @media screen and (max-width: 768px) {
     .row {
         flex-direction: column;
@@ -115,21 +114,20 @@
 
 .shop_table.woocommerce-checkout-review-order-table tbody tr.cart_item {
     margin-left: 20px;
-    padding: 16px 56px 16px 36px;
+
     background-color: #F6F6F6;
 
-    // Återställ flexbox-inställningarna för att åtgärda gapen
+    
     display: flex;
     align-items: center;
 
-    // Justera avståndet mellan innehållselementen
+    
     .product-thumbnail,
     .product-name,
     .product-total {
         margin: 0;
     }
 
-    // Produktens namn
     .product-name {
         flex: 1;
         font-family: $sf-font;
@@ -137,12 +135,12 @@
         font-weight: 500;
         line-height: 24px;
         color: #000000;
-        white-space: nowrap; // Förhindra radbrytning
-        overflow: hidden; // Dölj eventuell överflödande text
-        text-overflow: ellipsis; // Visa ellipsis för överskridande text
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
     }
 
-    // Produktens subtotal
+    
     .product-total {
         font-family: $sf-font;
         font-size: 16px;
@@ -150,6 +148,14 @@
         line-height: 24px;
         color: #000000;
     }
+}
+
+.shop_table.woocommerce-checkout-review-order-table {
+    margin-left: 20% !important;
+}
+
+.woocommerce table.shop_table{
+    width: 110%;
 }
 
 .woocommerce table.shop_table td {
@@ -194,12 +200,10 @@
 .shop_table.woocommerce-checkout-review-order-table tbody td {
     display: inline-block;
     vertical-align: top;
-    margin-right: 20px; // Justera avståndet mellan kolumnerna efter behov
+    margin-right: 20px; 
 }
 
-.shop_table.woocommerce-checkout-review-order-table {
-    width: 900px !important; // Ange den önskade bredden och använd !important för att säkerställa att denna regel prioriteras
-}
+
 
 .wc_payment_methods.payment_methods.methods {
     display: flex;
@@ -211,7 +215,7 @@
   .wc_payment_methods.payment_methods.methods li {
     flex: 1;
     text-align: center;
-    border-bottom: 2px solid transparent; /* Lägg till en transparent bottenkant */
+    border-bottom: 2px solid transparent; 
     padding: 10px;
     cursor: pointer;
   }
@@ -220,7 +224,7 @@
     position: absolute;
     opacity: 0;
     pointer-events: none;
-    border: 1px solid #000000; /* Byt ut #0000 mot #000000 för att få en svart färg */
+    border: 1px solid #000000; 
 }
   
   .payment_methods.methods li.active {
@@ -240,11 +244,11 @@
 
 
 #wc-stripe-upe-form {
-    border: none; // Ta bort alla gränser från fieldset
+    border: none; 
   }
   
   .wc-stripe-upe-element, #__PrivateStripeElement {
-    border: none !important; // Ta bort alla gränser från elementen
+    border: none !important; 
   }
   
   .wc-stripe-upe-element input[type="text"],
@@ -252,7 +256,7 @@
   .wc-stripe-upe-element input[type="email"],
   .wc-stripe-upe-element input[type="tel"],
   .wc-stripe-upe-element input[type="password"] {
-    border: 1px solid #CECECE; // Lägg till en 1px solid gräns runt inmatningsfälten
+    border: 1px solid #CECECE; 
   }
 
 
@@ -337,7 +341,7 @@
 
 .cart-address, .cart-ship {
     display: flex;
-    flex-direction: column; // Ändra flexriktningen till kolumn
+    flex-direction: column; 
     
 }
 .cart-address th{
@@ -345,7 +349,7 @@
 }
 
 .cart-address th, .cart-ship th {
-    width: 30% !important; // Justera bredden för rubriken
+    width: 30% !important; 
     font-family: 'SF Pro Display', sans-serif !important;
     font-size: 14px !important;
     font-weight: 500 !important;
@@ -359,7 +363,7 @@
 }
 
 .cart-address td, .cart-ship td {
-    width: 100% !important; // Använd hela bredden för adressen
+    width: 100% !important; 
     font-family: 'SF Pro Display', sans-serif !important;
     font-size: 16px !important;
     font-weight: 400 !important;
@@ -373,8 +377,8 @@
 
 .cart-subtotal th {
     font-family: 'SF Pro Display', sans-serif !important;
-    font-size: 16px !important;
-    font-weight: 500 !important;
+    font-size: 18px !important;
+    font-weight: 550 !important;
     line-height: 24px !important;
     letter-spacing: 0.03em !important;
     text-align: left !important;
@@ -397,7 +401,7 @@
 .woocommerce-shipping-totals.shipping th {
     font-family: 'SF Pro Display', sans-serif !important;
     font-size: 16px !important;
-    font-weight: 400 !important;
+    font-weight: 500 !important;
     line-height: 32px !important;
     letter-spacing: 0.03em !important;
     text-align: left !important;
@@ -414,5 +418,72 @@
     letter-spacing: 0.03em !important;
     text-align: left !important;
     color: #000000 !important;
+    
 }
 
+.order-total th{
+    padding-left: 3.5% !important;
+}
+.woocommerce-billing-fields{
+    padding-left: 3.5% !important;
+}
+
+
+
+.wpmc-tab-item.current.wpmc-billing {
+    position: relative; 
+}
+
+.wpmc-tab-item.current.wpmc-billing img {
+    position:sticky;
+    left: -30px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    margin: 0; 
+}
+
+.wpmc-tab-item.current.wpmc-billing .wpmc-tab-text {
+    margin-bottom: 2%;
+    margin-left: 7%; 
+}
+
+
+.wpmc-tab-item.current.wpmc-shipping {
+    position: relative; 
+}
+
+.wpmc-tab-item.current.wpmc-shipping img {
+    position: sticky;
+    left: -30px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    margin: 0; 
+}
+
+.wpmc-tab-item.current.wpmc-shipping .wpmc-tab-text {
+    margin-bottom: 2%;
+    margin-left: 7%; 
+}
+
+.wpmc-tab-item.current.wpmc-review {
+    position: relative; 
+}
+
+.wpmc-tab-item.current.wpmc-review img {
+    position: sticky;
+    left: -30px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    margin: 0; 
+}
+
+.wpmc-tab-item.current.wpmc-review .wpmc-tab-text {
+    margin-bottom: 2%;
+    margin-left: 12%; 
+}
+
+
+#payment_heading {
+    display: none; 
+    visibility: hidden; 
+}

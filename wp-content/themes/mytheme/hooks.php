@@ -12,19 +12,6 @@ add_filter( 'woocommerce_breadcrumb_defaults', 'change_breadcrumb_delimiter' );
 
 
 
-
-
-
-
-function change_shipping_text($translated_text, $text, $domain) {
-    if ($text === 'Shipping' && $domain === 'woocommerce') {
-        $translated_text = __('Estimated shipping & Handling', 'woocommerce');
-    }
-    return $translated_text;
-}
-add_filter('gettext', 'change_shipping_text', 20, 3);
-
-
 function add_menu_icons($items, $args) {
     // Kontrollera om det är huvudmenyn och om det finns element
     if ($args->theme_location == 'huvudmeny' && $items) {
@@ -157,3 +144,5 @@ function move_product_filter_form() {
     echo '</div>';
 }
 add_action( 'woocommerce_before_shop_loop', 'move_product_filter_form' );
+
+

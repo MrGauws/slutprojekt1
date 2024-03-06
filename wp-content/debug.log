@@ -279,3 +279,80 @@
 [04-Mar-2024 18:50:51 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
 [04-Mar-2024 18:50:51 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
 [04-Mar-2024 18:50:51 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\laragon\www\slutprojekt1\wp-content\plugins\filter-everything\src\Settings\Container.php on line 163
+[06-Mar-2024 15:10:39 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:10:39 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:10:39 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:10:39 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:10:39 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:10:39 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:10:39 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:10:40 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:10:40 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\laragon\www\slutprojekt1\wp-content\plugins\filter-everything\src\Settings\Container.php on line 163
+[06-Mar-2024 15:10:41 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:10:41 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\laragon\www\slutprojekt1\wp-content\plugins\filter-everything\src\Settings\Container.php on line 163
+[06-Mar-2024 15:10:41 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:11:17 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:11:18 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:11:18 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\laragon\www\slutprojekt1\wp-content\plugins\filter-everything\src\Settings\Container.php on line 163
+[06-Mar-2024 15:11:59 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:12:00 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:12:00 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:12:00 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\laragon\www\slutprojekt1\wp-content\plugins\filter-everything\src\Settings\Container.php on line 163
+[06-Mar-2024 15:12:00 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\laragon\www\slutprojekt1\wp-content\plugins\filter-everything\src\Settings\Container.php on line 163
+[06-Mar-2024 15:12:00 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\laragon\www\slutprojekt1\wp-content\plugins\filter-everything\src\Settings\Container.php on line 163
+[06-Mar-2024 15:12:00 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:00 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:00 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:00 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:00 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:00 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:00 UTC] PHP Warning:  Undefined variable $product_id in C:\laragon\www\slutprojekt1\wp-content\themes\mytheme\woocommerce\content-product.php on line 29
+[06-Mar-2024 15:12:00 UTC] PHP Warning:  Undefined variable $product_id in C:\laragon\www\slutprojekt1\wp-content\themes\mytheme\woocommerce\content-product.php on line 29
+[06-Mar-2024 15:12:00 UTC] PHP Warning:  Undefined variable $product_id in C:\laragon\www\slutprojekt1\wp-content\themes\mytheme\woocommerce\content-product.php on line 29
+[06-Mar-2024 15:12:00 UTC] PHP Warning:  Undefined variable $product_id in C:\laragon\www\slutprojekt1\wp-content\themes\mytheme\woocommerce\content-product.php on line 29
+[06-Mar-2024 15:12:00 UTC] PHP Warning:  Undefined variable $product_id in C:\laragon\www\slutprojekt1\wp-content\themes\mytheme\woocommerce\content-product.php on line 29
+[06-Mar-2024 15:12:00 UTC] PHP Warning:  Undefined variable $product_id in C:\laragon\www\slutprojekt1\wp-content\themes\mytheme\woocommerce\content-product.php on line 29
+[06-Mar-2024 15:12:00 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:12:00 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\laragon\www\slutprojekt1\wp-content\plugins\filter-everything\src\Settings\Container.php on line 163
+[06-Mar-2024 15:12:00 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:00 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:00 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:00 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:00 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:00 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:01 UTC] PHP Warning:  Undefined variable $product_id in C:\laragon\www\slutprojekt1\wp-content\themes\mytheme\woocommerce\content-product.php on line 29
+[06-Mar-2024 15:12:01 UTC] PHP Warning:  Undefined variable $product_id in C:\laragon\www\slutprojekt1\wp-content\themes\mytheme\woocommerce\content-product.php on line 29
+[06-Mar-2024 15:12:01 UTC] PHP Warning:  Undefined variable $product_id in C:\laragon\www\slutprojekt1\wp-content\themes\mytheme\woocommerce\content-product.php on line 29
+[06-Mar-2024 15:12:01 UTC] PHP Warning:  Undefined variable $product_id in C:\laragon\www\slutprojekt1\wp-content\themes\mytheme\woocommerce\content-product.php on line 29
+[06-Mar-2024 15:12:01 UTC] PHP Warning:  Undefined variable $product_id in C:\laragon\www\slutprojekt1\wp-content\themes\mytheme\woocommerce\content-product.php on line 29
+[06-Mar-2024 15:12:01 UTC] PHP Warning:  Undefined variable $product_id in C:\laragon\www\slutprojekt1\wp-content\themes\mytheme\woocommerce\content-product.php on line 29
+[06-Mar-2024 15:12:01 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:01 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:01 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:01 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:01 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:01 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:01 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:12:02 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:12:02 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:12:02 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:12:02 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\laragon\www\slutprojekt1\wp-content\plugins\filter-everything\src\Settings\Container.php on line 163
+[06-Mar-2024 15:12:02 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:12:02 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:12:02 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:02 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:02 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:02 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:02 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:02 UTC] PHP Deprecated:  Function get_woocommerce_term_meta is deprecated since version 3.6! Use get_term_meta instead. in C:\laragon\www\slutprojekt1\wp-includes\functions.php on line 6031
+[06-Mar-2024 15:12:02 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:12:03 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:12:03 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\laragon\www\slutprojekt1\wp-content\plugins\filter-everything\src\Settings\Container.php on line 163
+[06-Mar-2024 15:12:03 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:12:03 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\laragon\www\slutprojekt1\wp-content\plugins\filter-everything\src\Settings\Container.php on line 163
+[06-Mar-2024 15:12:03 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:12:03 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\laragon\www\slutprojekt1\wp-content\plugins\filter-everything\src\Settings\Container.php on line 163
+[06-Mar-2024 15:12:03 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:12:04 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
+[06-Mar-2024 15:12:04 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\laragon\www\slutprojekt1\wp-content\plugins\filter-everything\src\Settings\Container.php on line 163
+[06-Mar-2024 15:12:04 UTC] missing_token Unable to send request to WooCommerce Shipping & Tax server. WordPress.com token is missing (fetch_service_schemas_from_connect_server)
