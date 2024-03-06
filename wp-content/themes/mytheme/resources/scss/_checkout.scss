@@ -1,4 +1,6 @@
-
+.wpmc-tab-item.current.wpmc-review {
+    overflow-x: hidden;
+}
 
 // KCO-order-review
 #kco-order-review {
@@ -8,6 +10,7 @@
     border-radius: 10px;
     gap: 24px;
     background-color: white; 
+    
 }
 
 .shop_table.woocommerce-checkout-review-order-table {
@@ -154,7 +157,7 @@
 }
 
 .woocommerce table.shop_table{
-    width: 110%;
+    width: 100%;
     border-radius: 10px;
 }
 
@@ -307,7 +310,7 @@
     cursor: pointer; 
     font-size: 16px; 
     text-align: center; 
-    margin-right: 31%; 
+    
 }
 
 .back-button {
