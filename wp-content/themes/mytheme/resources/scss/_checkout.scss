@@ -175,9 +175,15 @@
 .right-column {
     flex: 1;
 }
+#order_review_heading {
+    display: none;
+}
 
+.includes_tax {
+    display: none;
+}
 .left-column {
-    margin-right: 20px; 
+    margin-left: 1%; 
 }
 .shop_table.woocommerce-checkout-review-order-table tbody tr {
     display: flex;
@@ -270,11 +276,12 @@
 .woocommerce-checkout #payment div.payment_box::before {
     content: "";
     display: block;
-    border-bottom: 2px solid #000000; 
+    border-bottom: 2px solid #000000 ; 
     width: 25%;
     margin-right: 20px;
     
 }
+
 
 #add_payment_method #payment div.payment_box::before, .woocommerce-cart #payment div.payment_box::before, .woocommerce-checkout #payment div.payment_box::before {
     border: none;
@@ -326,3 +333,86 @@
     margin-left: 105%; 
     margin-top: 40px;
 }
+
+
+.cart-address, .cart-ship {
+    display: flex;
+    flex-direction: column; // Ändra flexriktningen till kolumn
+    
+}
+.cart-address th{
+    margin-left: 2.2% !important;
+}
+
+.cart-address th, .cart-ship th {
+    width: 30% !important; // Justera bredden för rubriken
+    font-family: 'SF Pro Display', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: 16px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+    color: #545454 !important;
+    margin-left: 2%;
+    padding-top: 2% !important;
+    
+}
+
+.cart-address td, .cart-ship td {
+    width: 100% !important; // Använd hela bredden för adressen
+    font-family: 'SF Pro Display', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    letter-spacing: 0px !important;
+    text-align: left !important;
+    color: #000000 !important;
+    margin-left: 4%;
+    padding-top: 2% !important;
+}
+
+.cart-subtotal th {
+    font-family: 'SF Pro Display', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+    letter-spacing: 0.03em !important;
+    text-align: left !important;
+    color: #000000 !important;
+    padding-left: 3% !important;
+    padding-top: 2% !important;
+}
+.cart-taxx th {
+    font-family: 'SF Pro Display', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 32px !important;
+    letter-spacing: 0em !important;
+    text-align: left !important;
+    color: #545454 !important;
+    padding-left: 3% !important;
+    
+}
+
+.woocommerce-shipping-totals.shipping th {
+    font-family: 'SF Pro Display', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 32px !important;
+    letter-spacing: 0.03em !important;
+    text-align: left !important;
+    color: #545454 !important;
+    padding-left: 3% !important;
+}
+
+.order-total th,
+.order-total td {
+    font-family: 'SF Pro Display', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 32px !important;
+    letter-spacing: 0.03em !important;
+    text-align: left !important;
+    color: #000000 !important;
+}
+
