@@ -143,3 +143,4 @@ function change_product_label_to_summary($html) {
     $html = str_replace('<th class="product-name">Product</th>', '<th class="product-name">Summary</th>', $html);
     return $html;
 }
+

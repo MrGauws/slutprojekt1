@@ -36,6 +36,10 @@ do_action( 'woocommerce_before_main_content' );
     echo do_shortcode('[wcapf_form]');
     ?>
 
+    
+    <?php woocommerce_catalog_ordering(); ?>
+    
+
     <div class="products">
         <?php
         if ( woocommerce_product_loop() ) {
