@@ -6,14 +6,14 @@
 
     .woocommerce-breadcrumb {
         position: absolute; /* Absolut position */
-        margin-left: 6.5%; /* Justera uppåt med önskat avstånd */
+        margin-left: 11%; /* Justera uppåt med önskat avstånd */
         left: 0; /* Placera till vänster */
         width: auto; /* Anpassa bredden till innehållet */
         text-align: left; /* Vänsterjustera texten */
         z-index: 999; /* Placera över andra element */
         background-color: white; /* Justera bakgrundsfärgen efter behov */
         padding: 10px; /* Lägg till lämplig padding */
-        top: calc(20.25rem - 4.6875rem);
+        top: calc(18.25rem - 4.6875rem);
         a {
             text-decoration: none;
             color: #9f9f9f;
@@ -37,10 +37,7 @@
         margin-left: 20%;
         margin-left: auto;
 
-        .wcapf-form {
-            width: 15%; 
-            margin-right: 20px; 
-}
+        
         
         li.product {
             margin-bottom: 10%; 
@@ -68,12 +65,12 @@
 
             .price {
                 font-family: $sf-font;
-                font-size: 1.2em;
+                font-size: 24px;
                 font-weight: 600;
-                line-height: 1;
+                line-height: 3;
                 text-align: center;
-                color: $primary-text-color;
                 margin-top: auto;
+                color: $primary-text-color;
                 list-style-type: none;
                 border-bottom: none;
             }
@@ -91,7 +88,7 @@
 
 .archive-product-container {
     display: flex;
-    margin-left: 5%
+    margin-left: 9%
 }
 
 
@@ -213,6 +210,8 @@ $filter-border-color: #ddd;
     width: 30%; 
     margin: 20px; 
     padding: 20px; 
+    position: relative;
+    bottom: 7%;
     a {
         color: #007bff; 
         text-decoration: none;

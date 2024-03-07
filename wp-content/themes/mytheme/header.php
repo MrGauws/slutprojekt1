@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title><?=get_option('blogname');?></title>
-    <!-- //loads everything in head  -->
     <?php wp_head();?>
 </head>
 <body>
@@ -33,7 +32,6 @@
             );
             
             wp_nav_menu($menu); ?>    
-          <!--   <button class="hamburger">&#9776;</button>      -->
         </div>
     </div>
 
