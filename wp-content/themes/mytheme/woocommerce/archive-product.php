@@ -32,7 +32,7 @@ do_action( 'woocommerce_before_main_content' );
 
 <div class="archive-product-container">
     <?php
-    // Add your shortcode here to be displayed to the left of the products
+    // ADDING FILTER FORM WITH SHORTCODE
     echo do_shortcode('[wcapf_form]');
     ?>
 
@@ -54,9 +54,6 @@ do_action( 'woocommerce_before_main_content' );
     </div>
 </div>
 
-<div class="load-more">
-    <button id="load-more-button">Load More Products</button>
-</div>
 
 <?php
 /**
@@ -73,35 +70,6 @@ do_action( 'woocommerce_after_main_content' );
  */
 //do_action( 'woocommerce_sidebar' );
 ?>
-
-<script type="text/javascript">
-    jQuery(function($){
-        var page = 2; // Start page for AJAX request
-        var loading = false; // Variable to prevent multiple AJAX loads
-
-        $(document).on('click', '#load-more-button', function(){
-            if( ! loading ) {
-                loading = true;
-                var data = {
-                    'action': 'my_load_more_products',
-                    'query': <?php echo json_encode( $GLOBALS['wp_query']->query_vars ); ?>,
-                    'page': page
-                };
-
-                $.ajax({
-                    url: '<?php echo admin_url('admin-ajax.php'); ?>',
-                    data: data,
-                    type: 'POST',
-                    success: function(response) {
-                        $('#products').append(response);
-                        page++;
-                        loading = false;
-                    }
-                });
-            }
-        });
-    });
-</script>
 
 <?php
 get_footer( 'shop' );

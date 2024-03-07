@@ -62,11 +62,11 @@ defined( 'ABSPATH' ) || exit;
             <tfoot>
 
             <?php
-                // Hämtar kundens faktureringsadress
+                // FETCHES CUSTOMER INFO
                 $billing_address = WC()->customer->get_billing_address();
                 ?>
 
-                <!-- Visa faktureringsadressen om provided -->
+                <!-- SHOWS BILLING ADDRESS IF PROVIDED -->
                 <tr class="cart-address">
                     <th><?php esc_html_e('Address', 'woocommerce'); ?></th>
                     <td><?php echo esc_html( $billing_address ); ?></td>
@@ -79,7 +79,7 @@ defined( 'ABSPATH' ) || exit;
                         $shipping_methods = WC()->session->get('chosen_shipping_methods');
                         $chosen_shipping = $shipping_methods[0];
 
-                        // Översättningsfunktion
+                        // TRANSLATES
                         function translate_shipping_method($method_id) {
                             switch ($method_id) {
                                 case 'free_shipping:1':
@@ -95,7 +95,7 @@ defined( 'ABSPATH' ) || exit;
                             }
                         }
 
-                        // cALLar ppå översättningsfunktionen
+                        // CALLS THE TRANSLATION
                         $translated_shipping = translate_shipping_method($chosen_shipping);
 
                         echo $translated_shipping;
@@ -103,7 +103,7 @@ defined( 'ABSPATH' ) || exit;
                     </td>
                 </tr>
                 
-                <!-- Subtotal meny som visar pris - tax  -->
+                <!-- SUBTOTAL MENU THAT SHOWS PRICE - TAX  -->
                 <tr class="cart-subtotal">
                     <th><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
                     <td>
@@ -115,6 +115,7 @@ defined( 'ABSPATH' ) || exit;
                         ?>
                     </td>
                 </tr>
+                <!-- ESTIMATED TAX  -->
                 <tr class="cart-taxx">
                     <th><?php esc_html_e( 'Estimated Tax', 'woocommerce'); ?></th>
                     <td><?php wc_cart_totals_taxes_total_html(); ?></td>
@@ -160,7 +161,7 @@ defined( 'ABSPATH' ) || exit;
     </div>
     <div class="right-column">
         <?php
-        // Visa betalning
+        // SHOWS PAYMENT
         do_action('woocommerce_checkout_payment');
         ?>
     </div>

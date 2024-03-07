@@ -4,28 +4,34 @@ if(!defined('ABSPATH')){
 }
 require_once('vite.php');
 require_once('ajax.php');
-//initialize theme
+
+// INITIALIZE THEME
 require_once(get_template_directory() . '/init.php');
 
+// WOOCOMMERCE SUPPORT
 function mytheme_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 }
 add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
-
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
+// ENQUEUE WOOCOMMERCE SCRIPTS
 add_action('wp_enqueue_scripts', 'enqueue_woocommerce_scripts');
-
 function enqueue_woocommerce_scripts() {
     if (function_exists('is_woocommerce') && is_woocommerce()) {
         wp_enqueue_script('wc-add-to-cart-variation');
     }
 }
 
+// ENQUEUE CUSTOM SCRIPTS
+function enqueue_custom_scripts() {
+    wp_enqueue_script('custom-checkout-scripts', get_template_directory_uri() . '/resources/js/checkout.js', array('jquery'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
 
 
-
+// REGISTER SHOP SIDEBAR WIDGET
 function custom_theme_widgets_init() {
     register_sidebar( array(
         'name'          => __( 'Shop Sidebar', 'custom-theme' ),
@@ -39,7 +45,7 @@ function custom_theme_widgets_init() {
 }
 add_action( 'widgets_init', 'custom_theme_widgets_init' );
 
-// Funktion för att hantera AJAX-begäran för att spara liked-statusen
+// SAVE PRODUCT LIKE STATUS - >>>>>>>>>NEEDS WORK<<<<<<<<<<<
 function save_product_like_status() {
     $product_id = isset($_POST['product_id']) ? intval($_POST['product_id']) : 0;
     echo json_encode(array('success' => true));
@@ -49,25 +55,44 @@ add_action('wp_ajax_save_product_like_status', 'save_product_like_status');
 add_action('wp_ajax_nopriv_save_product_like_status', 'save_product_like_status');
 
 
-
-
-
-
-
-
-function enqueue_custom_scripts() {
-    wp_enqueue_script('custom-checkout-scripts', get_template_directory_uri() . '/resources/js/checkout.js', array('jquery'), '1.0', true);
+// REGISTER SHOP WIDGET AREA
+function mytheme_widgets_init() {
+    register_sidebar( array(
+        'name'          => __( 'Shop Widget Area', 'mytheme' ),
+        'id'            => 'shop_widget_area',
+        'description'   => __( 'Widget area for the shop page.', 'mytheme' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
 }
-add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+add_action( 'widgets_init', 'mytheme_widgets_init' );
+
+
+// DISPLAY SHOP WIDGET AREA
+add_action( 'woocommerce_before_main_content', 'mytheme_display_shop_widget_area', 10 );
+function mytheme_display_shop_widget_area() {
+    if ( is_active_sidebar( 'shop_widget_area' ) ) {
+        echo '<div id="shop-widget-area" class="shop-widget-area">';
+        dynamic_sidebar( 'shop_widget_area' );
+        echo '</div>';
+    }
+}
 
 
 
+// ---------------------------------------------------------------- AJAX ---------------------------------------------------------------- //
 
+// CHANGE NUMBER OF PRODUCTS PER PAGE SINCE WOOCOMMERCE CUSTOMIZATION AINT WORKING
+add_action( 'pre_get_posts', 'custom_products_per_page' );
+function custom_products_per_page( $query ) {
+    if ( ! is_admin() && is_post_type_archive( 'product' ) && $query->is_main_query() ) {
+        $query->set( 'posts_per_page', 6 ); 
+    }
+}
 
-
-
-
-
+// LOAD 6 MORE PRODUCTS
 add_action( 'wp_ajax_my_load_more_products', 'my_load_more_products_ajax' );
 add_action( 'wp_ajax_nopriv_my_load_more_products', 'my_load_more_products_ajax' );
 
@@ -95,6 +120,7 @@ function my_load_more_products_ajax() {
     die();
 }
 
+// LOAD PAGE 2 OF PRODUCTS
 add_action( 'wp_footer', 'ajax_load_more_products' );
 function ajax_load_more_products() { ?>
     <script type="text/javascript">
@@ -132,47 +158,5 @@ function ajax_load_more_products() { ?>
         });
     </script>
 <?php }
-
-add_action( 'pre_get_posts', 'custom_products_per_page' );
-function custom_products_per_page( $query ) {
-    if ( ! is_admin() && is_post_type_archive( 'product' ) && $query->is_main_query() ) {
-        $query->set( 'posts_per_page', 6 ); 
-    }
-}
-
-function mytheme_widgets_init() {
-    register_sidebar( array(
-        'name'          => __( 'Shop Widget Area', 'mytheme' ),
-        'id'            => 'shop_widget_area',
-        'description'   => __( 'Widget area for the shop page.', 'mytheme' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ) );
-}
-add_action( 'widgets_init', 'mytheme_widgets_init' );
-
-
-
-
-
-
-// widget-området shopsidan
-add_action( 'woocommerce_before_main_content', 'mytheme_display_shop_widget_area', 10 );
-function mytheme_display_shop_widget_area() {
-    if ( is_active_sidebar( 'shop_widget_area' ) ) {
-        echo '<div id="shop-widget-area" class="shop-widget-area">';
-        dynamic_sidebar( 'shop_widget_area' );
-        echo '</div>';
-    }
-}
-
-
-
-
-
-
-
 ?>
 

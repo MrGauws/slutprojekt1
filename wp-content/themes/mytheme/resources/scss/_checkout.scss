@@ -49,8 +49,113 @@
 }
 
 
+.woocommerce-billing-fields__field-wrapper .form-row {
+    width: 50%; /* Adjust width as needed */
+}
+
+.woocommerce-billing-fields__field-wrapper label {
+    display: block;
+    font-family: $sf-font;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.woocommerce-billing-fields__field-wrapper input[type="text"],
+.woocommerce-billing-fields__field-wrapper input[type="email"],
+.woocommerce-billing-fields__field-wrapper input[type="tel"],
+.woocommerce-billing-fields__field-wrapper select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: $sf-font;
+    margin-bottom: 10px;
+}
+
+span.optional {
+    font-style: italic;
+    font-size: 14px;
+    color: #666;
+}
+
+.woocommerce-shipping-fields__field-wrapper .form-row {
+    width: 50%; /* Adjust width as needed */
+}
+
+.woocommerce-shipping-fields__field-wrapper label {
+    display: block;
+    font-family: $sf-font;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.woocommerce-shipping-fields__field-wrapper input[type="text"],
+.woocommerce-shipping-fields__field-wrapper input[type="email"],
+.woocommerce-shipping-fields__field-wrapper input[type="tel"],
+.woocommerce-shipping-fields__field-wrapper select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: $sf-font;
+    margin-bottom: 10px;
+}
+
+span.optional {
+    font-style: italic;
+    font-size: 14px;
+    color: #666;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Stilar för knapparna */
+#wpmc-prev,
+#wpmc-next {
+    width: 207px; /* Justera efter behov */
+    height: 64px; /* Justera efter behov */
+    padding: 24px 86px; /* Justera efter behov */
+    border-radius: 6px;
+    gap: 8px;
+    font-family: 'SF Pro Display', sans-serif; /* Fontfamilj SF Pro Display */
+    font-size: 16px; /* Fontstorlek 16px */
+    font-weight: 500; /* Fetstil */
+    line-height: 16px; /* Radhöjd 16px */
+    letter-spacing: 0em; /* Avstånd mellan bokstäver 0em */
+    text-align: center; /* Textjustering till mitten */
+}
+
+/* Stilar för 'Next' knappen */
+#wpmc-next {
+    color: white; /* Justera efter behov */
+    background-color: #000000; /* Justera efter behov */
+    border: none; /* Justera efter behov */
+}
+
+/* Stilar för 'Back' knappen */
+#wpmc-prev {
+    color: black; /* Textfärg svart */
+    background-color: transparent; /* Genomskinlig bakgrund */
+    border: 1px solid #000000 !important;
+}
+
 .woocommerce-billing-fields {
     margin-bottom: 20px;
+    padding-left: 3.5% !important;
 
     h3 {
         font-family: $sf-font;
@@ -313,20 +418,7 @@
     
 }
 
-.back-button {
-    width: 244.5px; 
-    height: 64px; 
-    padding: 24px 86px; 
-    border: 1px solid #000000 !important; 
-    border-radius: 6px !important; 
-    gap: 8px; 
-    background-color: #ffffff !important; 
-    color: #000000 !important; 
-    cursor: pointer; 
-    font-size: 16px; 
-    text-align: center; 
-    margin-left: 4% !important; 
-}
+
 
 .cart-subtotal td small.tax_label {
     display: none !important;
@@ -430,9 +522,7 @@
 .order-total th{
     padding-left: 3.5% !important;
 }
-.woocommerce-billing-fields{
-    padding-left: 3.5% !important;
-}
+
 
 .wpmc-tabs-wrapper {
     margin-top: 5%;

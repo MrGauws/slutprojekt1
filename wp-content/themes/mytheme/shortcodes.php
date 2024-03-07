@@ -1,29 +1,29 @@
 <?php
-// Function to generate WooCommerce product category subheader navigation
+// FUNCTION TO GENERATE WOOCOMMERCE PRODUCT CATEGORY SUBHEADER NAVIGATION
 function custom_woocommerce_category_subheader_navigation() {
-    // Get product categories
+    // GET PRODUCT CATEGORIES
     $product_categories = get_terms( array(
         'taxonomy' => 'product_cat',
         'hide_empty' => false,
     ) );
 
-    // Initialize output variable
+    // INITIALIZE OUTPUT VARIABLE
     $output = '';
 
-    // Check if there are product categories
+    // CHECK IF THERE ARE PRODUCT CATEGORIES
     if ($product_categories) {
         $output .= '<div class="subheader-navigation">';
         $output .= '<ul>';
         
-        // Loop through product categories
+        // LOOP THROUGH PRODUCT CATEGORIES
         foreach ($product_categories as $category) {
-            // Exclude "Uncategorized"
+            // EXCLUDE "UNCATEGORIZED"
             if ($category->parent == 0 && $category->name != 'Uncategorized') {
-                // Get category thumbnail
+                // GET CATEGORY THUMBNAIL
                 $thumbnail_id = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
                 $image = wp_get_attachment_url( $thumbnail_id );
 
-                // Output category with thumbnail
+                // OUTPUT CATEGORY WITH THUMBNAIL
                 $output .= '<li><img src="' . $image . '" alt="' . $category->name . '">';
                 $output .= '<a href="' . get_term_link($category) . '">' . $category->name . '</a></li>';
             }
@@ -33,14 +33,14 @@ function custom_woocommerce_category_subheader_navigation() {
         $output .= '</div>';
     }
 
-    // Return the output
+    // RETURN THE OUTPUT
     return $output;
 }
 add_shortcode('woocommerce_category_subheader_navigation', 'custom_woocommerce_category_subheader_navigation');
 
 
 
-
+// LIVE SEARCH 
 add_shortcode('live_search', 'live_search_function');
 function live_search_function() { ?>
 
@@ -51,6 +51,7 @@ function live_search_function() { ?>
     <?php
 }
 
+// FETCH DATA -> AJAX
 add_action( 'wp_footer', 'ajax_fetch' );
 function ajax_fetch() { ?>
 
@@ -75,7 +76,7 @@ function ajax_fetch() { ?>
             });
         }
     }
-    // Denna funktion visar productfetch när användaren börjar skriva
+    // SHOW PRODUCTFETCH WHEN THE USER STARTS TYPING
     jQuery(document).ready(function() {
             jQuery('#keyword').on('input', function() {
                 if (jQuery(this).val().length > 0) {
@@ -89,6 +90,7 @@ function ajax_fetch() { ?>
 <?php
 }
 
+// FETCH PRODUCT DATA
 add_action('wp_ajax_data_fetch' , 'product_fetch');
 add_action('wp_ajax_nopriv_data_fetch','product_fetch');
 function product_fetch() {
