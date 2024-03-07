@@ -2,17 +2,17 @@
     width: 100%;
     margin-top: 10%;
     display: flex;
-    justify-content: center; /* Horisontellt centrerad */
+    justify-content: center; 
 
     .woocommerce-breadcrumb {
-        position: absolute; /* Absolut position */
-        margin-left: 11%; /* Justera uppåt med önskat avstånd */
-        left: 0; /* Placera till vänster */
-        width: auto; /* Anpassa bredden till innehållet */
-        text-align: left; /* Vänsterjustera texten */
-        z-index: 999; /* Placera över andra element */
-        background-color: white; /* Justera bakgrundsfärgen efter behov */
-        padding: 10px; /* Lägg till lämplig padding */
+        position: absolute; 
+        margin-left: 11%; 
+        left: 0; 
+        width: auto; 
+        text-align: left; 
+        z-index: 999; 
+        background-color: white; 
+        padding: 10px; 
         top: calc(18.25rem - 4.6875rem);
         a {
             text-decoration: none;

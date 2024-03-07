@@ -50,7 +50,7 @@
 
 
 .woocommerce-billing-fields__field-wrapper .form-row {
-    width: 50%; /* Adjust width as needed */
+    width: 50%; 
 }
 
 .woocommerce-billing-fields__field-wrapper label {
@@ -82,7 +82,7 @@ span.optional {
 }
 
 .woocommerce-shipping-fields__field-wrapper .form-row {
-    width: 50%; /* Adjust width as needed */
+    width: 50%; 
 }
 
 .woocommerce-shipping-fields__field-wrapper label {
@@ -114,44 +114,32 @@ span.optional {
 }
 
 
-
-
-
-
-
-
-
-
-
 /* Stilar för knapparna */
 #wpmc-prev,
 #wpmc-next {
-    width: 207px; /* Justera efter behov */
-    height: 64px; /* Justera efter behov */
-    padding: 24px 86px; /* Justera efter behov */
+    width: 207px; 
+    height: 64px; 
+    padding: 24px 86px; 
     border-radius: 6px;
     gap: 8px;
-    font-family: 'SF Pro Display', sans-serif; /* Fontfamilj SF Pro Display */
-    font-size: 16px; /* Fontstorlek 16px */
-    font-weight: 500; /* Fetstil */
-    line-height: 16px; /* Radhöjd 16px */
-    letter-spacing: 0em; /* Avstånd mellan bokstäver 0em */
-    text-align: center; /* Textjustering till mitten */
+    font-family: 'SF Pro Display', sans-serif; 
+    font-size: 16px; 
+    font-weight: 500; 
+    line-height: 16px; 
+    letter-spacing: 0em; 
+    text-align: center; 
 }
-
-/* Stilar för 'Next' knappen */
 #wpmc-next {
-    color: white; /* Justera efter behov */
-    background-color: #000000; /* Justera efter behov */
-    border: none; /* Justera efter behov */
+    color: white; 
+    background-color: #000000; 
+    border: none; 
 }
-
-/* Stilar för 'Back' knappen */
 #wpmc-prev {
-    color: black; /* Textfärg svart */
-    background-color: transparent; /* Genomskinlig bakgrund */
+    color: black; 
+    background-color: transparent; 
     border: 1px solid #000000 !important;
 }
+
 
 .woocommerce-billing-fields {
     margin-bottom: 20px;
@@ -207,17 +195,7 @@ span.optional {
 }
 
 
-@media screen and (max-width: 768px) {
-    .row {
-        flex-direction: column;
 
-        .left-column,
-        .right-column {
-            margin-right: 0;
-            margin-left: 0;
-        }
-    }
-}
 
 .shop_table.woocommerce-checkout-review-order-table tbody tr.cart_item {
     margin-left: 20px;
@@ -258,7 +236,8 @@ span.optional {
 }
 
 .shop_table.woocommerce-checkout-review-order-table {
-    margin-left: 20% !important;
+    margin-left: 10% !important;
+    margin-top: 2.5% !important;
 }
 
 .woocommerce table.shop_table{
@@ -298,7 +277,14 @@ span.optional {
 }
 .left-column {
     margin-left: 1%; 
+    z-index: 9999;
 }
+.QGo9N__src-components-Overlay-overlay {
+    transform: scale(0.9) !important;
+    padding: 15px !important;
+    margin-left: 20px !important;
+  }
+
 .shop_table.woocommerce-checkout-review-order-table tbody tr {
     display: flex;
     justify-content: space-between;
@@ -418,13 +404,6 @@ span.optional {
     
 }
 
-
-
-.cart-subtotal td small.tax_label {
-    display: none !important;
-}
-
-
 #add_payment_method #payment div.payment_box::before,
 .woocommerce-cart #payment div.payment_box::before,
 .woocommerce-checkout #payment div.payment_box::before {
@@ -436,6 +415,10 @@ span.optional {
     margin-top: 60px;
 }
 
+
+.cart-subtotal td small.tax_label {
+    display: none !important;
+}
 
 .cart-address, .cart-ship {
     display: flex;
@@ -599,3 +582,14 @@ span.optional {
     border-bottom-color: none; 
 }
 
+@media screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+
+        .left-column,
+        .right-column {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+}
