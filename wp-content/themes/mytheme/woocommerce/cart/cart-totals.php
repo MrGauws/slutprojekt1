@@ -66,15 +66,15 @@ defined( 'ABSPATH' ) || exit;
 		<?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
 
 		<?php
-		$subtotal = WC()->cart->subtotal; // Get the cart subtotal
-		$shipping_cost_under_1000 = 79; // Shipping cost for prices under 1000 kr
-		$shipping_cost_over_1000 = 0; // Shipping cost for prices over 1000 kr
+		$subtotal = WC()->cart->subtotal; 
+		$shipping_cost_under_1000 = 79; 
+		$shipping_cost_over_1000 = 0; 
 
 		if ($subtotal < 1000) {
-		// If subtotal is below 1000 kr, set the shipping cost accordingly
+		
 		$shipping_cost_under_1000 = 79;
 	} else {
-	// If subtotal is 1000 kr or above, set free shipping
+	
 	$shipping_cost_over_1000 = 0;
 	}
 

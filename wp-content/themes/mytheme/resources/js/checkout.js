@@ -114,3 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    var productCount = document.querySelectorAll('.product').length;
+    document.getElementById("product-count").textContent = productCount;
+});
